@@ -13,6 +13,7 @@
 		44D279141AC01B4400F0D46F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D279131AC01B4400F0D46F /* Images.xcassets */; };
 		44D279231AC01B4400F0D46F /* EPMaterialKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D279221AC01B4400F0D46F /* EPMaterialKitTests.m */; };
 		44D2792D1AC021DC00F0D46F /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D2792C1AC021DC00F0D46F /* MainView.xib */; };
+		44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D2792E1AC0266900F0D46F /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		44D279211AC01B4400F0D46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44D279221AC01B4400F0D46F /* EPMaterialKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPMaterialKitTests.m; sourceTree = "<group>"; };
 		44D2792C1AC021DC00F0D46F /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		44D2792E1AC0266900F0D46F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		44D279061AC01B4400F0D46F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				44D2792E1AC0266900F0D46F /* Default-568h@2x.png */,
 				44D279071AC01B4400F0D46F /* Info.plist */,
 				44D279081AC01B4400F0D46F /* main.m */,
 			);
@@ -199,6 +202,7 @@
 			files = (
 				44D279141AC01B4400F0D46F /* Images.xcassets in Resources */,
 				44D2792D1AC021DC00F0D46F /* MainView.xib in Resources */,
+				44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +402,7 @@
 				44D279281AC01B4400F0D46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44D279291AC01B4400F0D46F /* Build configuration list for PBXNativeTarget "EPMaterialKitTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +411,7 @@
 				44D2792B1AC01B4400F0D46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
