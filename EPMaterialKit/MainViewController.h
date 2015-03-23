@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  EPMaterialKit
 //
 //  Created by Eugene Pankratov on 23.03.15.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController {
 
+}
 
 @end
-
