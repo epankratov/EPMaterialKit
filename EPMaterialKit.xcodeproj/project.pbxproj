@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		446A4F6A1AF16F6C00A1ED3A /* EPLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 446A4F691AF16F6C00A1ED3A /* EPLayer.m */; };
+		4476F84D1B06790200E62CC8 /* EPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4476F84C1B06790200E62CC8 /* EPButton.m */; };
 		44D279091AC01B4400F0D46F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D279081AC01B4400F0D46F /* main.m */; };
 		44D2790C1AC01B4400F0D46F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2790B1AC01B4400F0D46F /* AppDelegate.m */; };
 		44D2790F1AC01B4400F0D46F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2790E1AC01B4400F0D46F /* MainViewController.m */; };
@@ -27,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		446A4F681AF16F6C00A1ED3A /* EPLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPLayer.h; sourceTree = "<group>"; };
+		446A4F691AF16F6C00A1ED3A /* EPLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPLayer.m; sourceTree = "<group>"; };
+		4476F84B1B06790200E62CC8 /* EPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPButton.h; sourceTree = "<group>"; };
+		4476F84C1B06790200E62CC8 /* EPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPButton.m; sourceTree = "<group>"; };
 		44D279031AC01B4400F0D46F /* EPMaterialKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPMaterialKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D279071AC01B4400F0D46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44D279081AC01B4400F0D46F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +87,10 @@
 		44D279051AC01B4400F0D46F /* EPMaterialKit */ = {
 			isa = PBXGroup;
 			children = (
+				446A4F681AF16F6C00A1ED3A /* EPLayer.h */,
+				446A4F691AF16F6C00A1ED3A /* EPLayer.m */,
+				4476F84B1B06790200E62CC8 /* EPButton.h */,
+				4476F84C1B06790200E62CC8 /* EPButton.m */,
 				44D2790A1AC01B4400F0D46F /* AppDelegate.h */,
 				44D2790B1AC01B4400F0D46F /* AppDelegate.m */,
 				44D2790D1AC01B4400F0D46F /* MainViewController.h */,
@@ -222,6 +232,8 @@
 			files = (
 				44D2790F1AC01B4400F0D46F /* MainViewController.m in Sources */,
 				44D2790C1AC01B4400F0D46F /* AppDelegate.m in Sources */,
+				4476F84D1B06790200E62CC8 /* EPButton.m in Sources */,
+				446A4F6A1AF16F6C00A1ED3A /* EPLayer.m in Sources */,
 				44D279091AC01B4400F0D46F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
