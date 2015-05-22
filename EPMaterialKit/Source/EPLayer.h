@@ -30,8 +30,8 @@ typedef enum {
     CAShapeLayer *_maskLayer;
 }
 
-@property (nonatomic, setter=setRippleLocation:) EPRippleLocation rippleLocation;
-@property (nonatomic, setter=setRipplePercent:) CGFloat ripplePercent;
+@property (nonatomic, assign) EPRippleLocation rippleLocation;
+@property (nonatomic, assign) CGFloat ripplePercent;
 
 + (CAMediaTimingFunction *)timingFunctionForFunctionType:(EPTimingFunction)functionType;
 - (id)initWithSuperLayer:(CALayer *)superLayer;

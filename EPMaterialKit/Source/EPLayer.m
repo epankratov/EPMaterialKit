@@ -85,6 +85,7 @@
 
 - (void)setRippleLocation:(EPRippleLocation)rippleLocation
 {
+    _rippleLocation = rippleLocation;
     CGPoint origin = CGPointZero;
     switch (rippleLocation)
     {
