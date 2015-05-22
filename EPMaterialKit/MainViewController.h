@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Global.h"
 
 @interface MainViewController : UIViewController {
 
 }
+
+@property (nonatomic, strong) IBOutlet EPButton *buttonViewController;
+
+- (IBAction)showButtonViewController:(id)sender;
 
 @end

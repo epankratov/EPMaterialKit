@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "ButtonsViewController.h"
 
 @interface MainViewController ()
 
@@ -38,7 +39,17 @@
 
 - (void)dealloc
 {
+    [_buttonViewController release];
     [super dealloc];
+}
+
+#pragma mark - User actions
+
+- (IBAction)showButtonViewController:(id)sender
+{
+    ButtonsViewController *viewController = [[ButtonsViewController alloc] initWithNibName:@"ButtonsView" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+    [viewController release];
 }
 
 @end
