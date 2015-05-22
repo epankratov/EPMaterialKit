@@ -29,6 +29,7 @@
 
     self.raisedButton.layer.shadowOpacity = 0.55;
     self.raisedButton.layer.shadowRadius = 5.0;
+    self.raisedButton.aniDuration = 0.25;
     self.raisedButton.layer.shadowColor = [UIColor grayColor].CGColor;
     self.raisedButton.layer.shadowOffset = CGSizeMake(0, 2.5);
 
