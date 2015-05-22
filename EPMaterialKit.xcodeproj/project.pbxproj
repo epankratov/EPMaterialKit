@@ -93,9 +93,9 @@
 		44728C251B0F8B94009D4136 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				44728C391B0F968E009D4136 /* MainView.xib */,
 				44728C3A1B0F968E009D4136 /* MainViewController.h */,
 				44728C3B1B0F968E009D4136 /* MainViewController.m */,
+				44728C391B0F968E009D4136 /* MainView.xib */,
 				44728C261B0F8BED009D4136 /* ButtonsViewController.h */,
 				44728C271B0F8BED009D4136 /* ButtonsViewController.m */,
 				44728C281B0F8BED009D4136 /* ButtonsView.xib */,
