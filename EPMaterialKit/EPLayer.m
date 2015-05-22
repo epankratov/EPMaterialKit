@@ -17,7 +17,7 @@
                   fromOpacity:(CGFloat)fromOpacity
                     toOpacity:(CGFloat)toOpacity
            withTimingFunction:(EPTimingFunction)timingFunction
-                 withduration:(CFTimeInterval)duration;
+                 withDuration:(CFTimeInterval)duration;
 
 @end
 
@@ -28,11 +28,11 @@
 + (CAMediaTimingFunction *)timingFunctionForFunctionType:(EPTimingFunction)functionType
 {
     switch (functionType) {
-        case Linear:
+        case EPTimingFunctionLinear:
             return [CAMediaTimingFunction functionWithName:@"linear"];
-        case EaseIn:
+        case EPTimingFunctionEaseIn:
             return [CAMediaTimingFunction functionWithName:@"easeIn"];
-        case EaseOut:
+        case EPTimingFunctionEaseOut:
             return [CAMediaTimingFunction functionWithName:@"easeOut"];
         default:
             return nil;
@@ -45,36 +45,38 @@
 {
     self = [super init];
     if (self) {
-        _superLayer = superLayer;
+        _superLayer = [superLayer retain];
         
         CGFloat superLayerWidth = CGRectGetWidth(superLayer.bounds);
         CGFloat superLayerHeight = CGRectGetHeight(superLayer.bounds);
         
         // background layer
-        _backgroundLayer = [CALayer layer];
+        _backgroundLayer = [[CALayer layer] retain];
         _backgroundLayer.frame = superLayer.bounds;
         _backgroundLayer.opacity = 0.0;
         [_superLayer addSublayer:_backgroundLayer];
         
         // circlelayer
         self.ripplePercent = 0.9;
-        self.rippleLocation = TapLocation;
+        self.rippleLocation = EPRippleLocationTapLocation;
         CGFloat circleSize = (CGFloat)(MAX(superLayerWidth, superLayerHeight) * self.ripplePercent);
         CGFloat circleCornerRadius = circleSize / 2;
         
-        _rippleLayer = [CALayer layer];
+        _rippleLayer = [[CALayer layer] retain];
         _rippleLayer.opacity = 0.0;
         _rippleLayer.cornerRadius = circleCornerRadius;
         [self setCircleLayerLocationAt:CGPointMake(superLayerWidth / 2, superLayerHeight / 2)];
         [_backgroundLayer addSublayer:_rippleLayer];
         
         // mask layer
-        _maskLayer = [CAShapeLayer layer];
+        _maskLayer = [[CAShapeLayer layer] retain];
         [self setMaskLayerCornerRadius:superLayer.cornerRadius];
         [_backgroundLayer setMask:_maskLayer];
     }
     return self;
 }
+
+#pragma mark - Setters
 
 - (void)setMaskLayerCornerRadius:(CGFloat)cornerRadius
 {
@@ -86,13 +88,13 @@
     CGPoint origin = CGPointZero;
     switch (rippleLocation)
     {
-        case Center:
+        case EPRippleLocationCenter:
             origin = CGPointMake(_superLayer.bounds.size.width / 2, _superLayer.bounds.size.height / 2);
             break;
-        case Left:
+        case EPRippleLocationLeft:
             origin = CGPointMake(_superLayer.bounds.size.width * 0.25, _superLayer.bounds.size.height / 2);
             break;
-        case Right:
+        case EPRippleLocationRight:
             origin = CGPointMake(_superLayer.bounds.size.width * 0.75, _superLayer.bounds.size.height / 2);
             break;
         default:
@@ -110,7 +112,6 @@
         CGFloat width = CGRectGetWidth(_superLayer.bounds);
         CGFloat height = CGRectGetHeight(_superLayer.bounds);
         CGFloat circleSize = (CGFloat)(MAX(width, height) * self.ripplePercent);
-//        CGFloat circleCornerRadius = circleSize / 2;
         _rippleLayer.cornerRadius = circleSize / 2;
         [self setCircleLayerLocationAt:CGPointMake(width / 2, height / 2)];
     }
@@ -144,7 +145,7 @@
 
 - (void)didChangeTapLocation:(CGPoint)location
 {
-    if (self.rippleLocation == TapLocation) {
+    if (self.rippleLocation == EPRippleLocationTapLocation) {
         [self setCircleLayerLocationAt:location];
     }
 }
@@ -182,7 +183,7 @@
 }
 
 - (void)animateAlphaForBackgroundLayer:(EPTimingFunction)timingFunction
-                          withduration:(CFTimeInterval)duration
+                          withDuration:(CFTimeInterval)duration
 {
     CABasicAnimation *backgroundLayerAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
     backgroundLayerAnim.fromValue = @(1.0);
@@ -197,7 +198,7 @@
                     fromOpacity:(CGFloat)fromOpacity
                       toOpacity:(CGFloat)toOpacity
              withTimingFunction:(EPTimingFunction)timingFunction
-                   withduration:(CFTimeInterval)duration
+                   withDuration:(CFTimeInterval)duration
 {
     [self animateShadowForLayer:_superLayer
                      fromRadius:fromRadius
@@ -205,10 +206,26 @@
                     fromOpacity:fromOpacity
                       toOpacity:toOpacity
              withTimingFunction:timingFunction
-                   withduration:duration];
+                   withDuration:duration];
 }
 
+#pragma mark - Memory management
+
+- (void)dealloc
+{
+    [_superLayer release];
+    [_rippleLayer release];
+    [_backgroundLayer release];
+    [_maskLayer release];
+
+    [super dealloc];
+}
+
+@end
+
 #pragma mark - Private methods
+
+@implementation EPLayer (PrivateMethods)
 
 - (void)setCircleLayerLocationAt:(CGPoint)center
 {
@@ -232,7 +249,7 @@
                   fromOpacity:(CGFloat)fromOpacity
                     toOpacity:(CGFloat)toOpacity
            withTimingFunction:(EPTimingFunction)timingFunction
-                 withduration:(CFTimeInterval)duration
+                 withDuration:(CFTimeInterval)duration
 {
     CABasicAnimation *radiusAnimation = [CABasicAnimation animationWithKeyPath:@"shadowRadius"];
     radiusAnimation.fromValue = @(fromRadius);

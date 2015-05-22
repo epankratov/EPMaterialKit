@@ -11,16 +11,16 @@
 #import <QuartzCore/QuartzCore.h>
 
 typedef enum {
-    Linear,
-    EaseIn,
-    EaseOut
+    EPTimingFunctionLinear,
+    EPTimingFunctionEaseIn,
+    EPTimingFunctionEaseOut
 } EPTimingFunction;
 
 typedef enum {
-    Center,
-    Left,
-    Right,
-    TapLocation
+    EPRippleLocationCenter,
+    EPRippleLocationLeft,
+    EPRippleLocationRight,
+    EPRippleLocationTapLocation
 } EPRippleLocation;
 
 @interface EPLayer : NSObject {
@@ -48,12 +48,12 @@ typedef enum {
                 withTimingFunction:(EPTimingFunction)timingFunction
                       withDuration:(CFTimeInterval)duration;
 - (void)animateAlphaForBackgroundLayer:(EPTimingFunction)timingFunction
-                          withduration:(CFTimeInterval)duration;
+                          withDuration:(CFTimeInterval)duration;
 - (void)animateSuperLayerShadow:(CGFloat)fromRadius
                        toRadius:(CGFloat)toRadius
                     fromOpacity:(CGFloat)fromOpacity
                       toOpacity:(CGFloat)toOpacity
              withTimingFunction:(EPTimingFunction)timingFunction
-                   withduration:(CFTimeInterval)duration;
+                   withDuration:(CFTimeInterval)duration;
 
 @end
