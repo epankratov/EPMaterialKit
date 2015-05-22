@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		446A4F6A1AF16F6C00A1ED3A /* EPLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 446A4F691AF16F6C00A1ED3A /* EPLayer.m */; };
+		44728C231B0F8B43009D4136 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44728C211B0F8B43009D4136 /* icon1.png */; };
+		44728C241B0F8B43009D4136 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44728C221B0F8B43009D4136 /* icon2.png */; };
+		44728C291B0F8BED009D4136 /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C271B0F8BED009D4136 /* ButtonsViewController.m */; };
+		44728C2A1B0F8BED009D4136 /* ButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44728C281B0F8BED009D4136 /* ButtonsView.xib */; };
+		44728C2E1B0F9050009D4136 /* UIColor+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C2D1B0F9050009D4136 /* UIColor+Extra.m */; };
+		44728C311B0F916E009D4136 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C301B0F916E009D4136 /* Global.m */; };
 		4476F84D1B06790200E62CC8 /* EPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4476F84C1B06790200E62CC8 /* EPButton.m */; };
 		44D279091AC01B4400F0D46F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D279081AC01B4400F0D46F /* main.m */; };
 		44D2790C1AC01B4400F0D46F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2790B1AC01B4400F0D46F /* AppDelegate.m */; };
@@ -31,6 +37,15 @@
 /* Begin PBXFileReference section */
 		446A4F681AF16F6C00A1ED3A /* EPLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPLayer.h; sourceTree = "<group>"; };
 		446A4F691AF16F6C00A1ED3A /* EPLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPLayer.m; sourceTree = "<group>"; };
+		44728C211B0F8B43009D4136 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		44728C221B0F8B43009D4136 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		44728C261B0F8BED009D4136 /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonsViewController.h; path = "View Controllers/ButtonsViewController.h"; sourceTree = "<group>"; };
+		44728C271B0F8BED009D4136 /* ButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonsViewController.m; path = "View Controllers/ButtonsViewController.m"; sourceTree = "<group>"; };
+		44728C281B0F8BED009D4136 /* ButtonsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonsView.xib; path = "View Controllers/ButtonsView.xib"; sourceTree = "<group>"; };
+		44728C2C1B0F9050009D4136 /* UIColor+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Extra.h"; path = "Categories/UIColor+Extra.h"; sourceTree = "<group>"; };
+		44728C2D1B0F9050009D4136 /* UIColor+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Extra.m"; path = "Categories/UIColor+Extra.m"; sourceTree = "<group>"; };
+		44728C2F1B0F916E009D4136 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		44728C301B0F916E009D4136 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
 		4476F84B1B06790200E62CC8 /* EPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPButton.h; sourceTree = "<group>"; };
 		4476F84C1B06790200E62CC8 /* EPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPButton.m; sourceTree = "<group>"; };
 		44D279031AC01B4400F0D46F /* EPMaterialKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPMaterialKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +81,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44728C201B0F8B43009D4136 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44728C211B0F8B43009D4136 /* icon1.png */,
+				44728C221B0F8B43009D4136 /* icon2.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44728C251B0F8B94009D4136 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44728C261B0F8BED009D4136 /* ButtonsViewController.h */,
+				44728C271B0F8BED009D4136 /* ButtonsViewController.m */,
+				44728C281B0F8BED009D4136 /* ButtonsView.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		44728C2B1B0F8FED009D4136 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				44728C2C1B0F9050009D4136 /* UIColor+Extra.h */,
+				44728C2D1B0F9050009D4136 /* UIColor+Extra.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		44728C321B0F9406009D4136 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
 		44D278FA1AC01B4400F0D46F = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +137,9 @@
 		44D279051AC01B4400F0D46F /* EPMaterialKit */ = {
 			isa = PBXGroup;
 			children = (
+				44728C2B1B0F8FED009D4136 /* Categories */,
+				44728C251B0F8B94009D4136 /* View Controllers */,
+				44728C321B0F9406009D4136 /* Source */,
 				446A4F681AF16F6C00A1ED3A /* EPLayer.h */,
 				446A4F691AF16F6C00A1ED3A /* EPLayer.m */,
 				4476F84B1B06790200E62CC8 /* EPButton.h */,
@@ -95,9 +148,12 @@
 				44D2790B1AC01B4400F0D46F /* AppDelegate.m */,
 				44D2790D1AC01B4400F0D46F /* MainViewController.h */,
 				44D2790E1AC01B4400F0D46F /* MainViewController.m */,
-				44D279131AC01B4400F0D46F /* Images.xcassets */,
-				44D279061AC01B4400F0D46F /* Supporting Files */,
 				44D2792C1AC021DC00F0D46F /* MainView.xib */,
+				44728C2F1B0F916E009D4136 /* Global.h */,
+				44728C301B0F916E009D4136 /* Global.m */,
+				44D279131AC01B4400F0D46F /* Images.xcassets */,
+				44728C201B0F8B43009D4136 /* Resources */,
+				44D279061AC01B4400F0D46F /* Supporting Files */,
 			);
 			path = EPMaterialKit;
 			sourceTree = "<group>";
@@ -211,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				44D279141AC01B4400F0D46F /* Images.xcassets in Resources */,
+				44728C241B0F8B43009D4136 /* icon2.png in Resources */,
 				44D2792D1AC021DC00F0D46F /* MainView.xib in Resources */,
+				44728C231B0F8B43009D4136 /* icon1.png in Resources */,
+				44728C2A1B0F8BED009D4136 /* ButtonsView.xib in Resources */,
 				44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,8 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44728C291B0F8BED009D4136 /* ButtonsViewController.m in Sources */,
+				44728C2E1B0F9050009D4136 /* UIColor+Extra.m in Sources */,
 				44D2790F1AC01B4400F0D46F /* MainViewController.m in Sources */,
 				44D2790C1AC01B4400F0D46F /* AppDelegate.m in Sources */,
+				44728C311B0F916E009D4136 /* Global.m in Sources */,
 				4476F84D1B06790200E62CC8 /* EPButton.m in Sources */,
 				446A4F6A1AF16F6C00A1ED3A /* EPLayer.m in Sources */,
 				44D279091AC01B4400F0D46F /* main.m in Sources */,
