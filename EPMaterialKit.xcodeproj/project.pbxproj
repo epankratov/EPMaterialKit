@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		446A4F6A1AF16F6C00A1ED3A /* EPLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 446A4F691AF16F6C00A1ED3A /* EPLayer.m */; };
 		44728C231B0F8B43009D4136 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44728C211B0F8B43009D4136 /* icon1.png */; };
 		44728C241B0F8B43009D4136 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44728C221B0F8B43009D4136 /* icon2.png */; };
 		44728C291B0F8BED009D4136 /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C271B0F8BED009D4136 /* ButtonsViewController.m */; };
 		44728C2A1B0F8BED009D4136 /* ButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44728C281B0F8BED009D4136 /* ButtonsView.xib */; };
 		44728C2E1B0F9050009D4136 /* UIColor+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C2D1B0F9050009D4136 /* UIColor+Extra.m */; };
 		44728C311B0F916E009D4136 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C301B0F916E009D4136 /* Global.m */; };
-		4476F84D1B06790200E62CC8 /* EPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4476F84C1B06790200E62CC8 /* EPButton.m */; };
+		44728C371B0F9672009D4136 /* EPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C341B0F9672009D4136 /* EPButton.m */; };
+		44728C381B0F9672009D4136 /* EPLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C361B0F9672009D4136 /* EPLayer.m */; };
+		44728C3C1B0F968E009D4136 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44728C391B0F968E009D4136 /* MainView.xib */; };
+		44728C3D1B0F968E009D4136 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C3B1B0F968E009D4136 /* MainViewController.m */; };
 		44D279091AC01B4400F0D46F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D279081AC01B4400F0D46F /* main.m */; };
 		44D2790C1AC01B4400F0D46F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2790B1AC01B4400F0D46F /* AppDelegate.m */; };
-		44D2790F1AC01B4400F0D46F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2790E1AC01B4400F0D46F /* MainViewController.m */; };
 		44D279141AC01B4400F0D46F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D279131AC01B4400F0D46F /* Images.xcassets */; };
 		44D279231AC01B4400F0D46F /* EPMaterialKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D279221AC01B4400F0D46F /* EPMaterialKitTests.m */; };
-		44D2792D1AC021DC00F0D46F /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D2792C1AC021DC00F0D46F /* MainView.xib */; };
 		44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D2792E1AC0266900F0D46F /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		446A4F681AF16F6C00A1ED3A /* EPLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPLayer.h; sourceTree = "<group>"; };
-		446A4F691AF16F6C00A1ED3A /* EPLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPLayer.m; sourceTree = "<group>"; };
 		44728C211B0F8B43009D4136 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
 		44728C221B0F8B43009D4136 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 		44728C261B0F8BED009D4136 /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonsViewController.h; path = "View Controllers/ButtonsViewController.h"; sourceTree = "<group>"; };
@@ -46,20 +44,22 @@
 		44728C2D1B0F9050009D4136 /* UIColor+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Extra.m"; path = "Categories/UIColor+Extra.m"; sourceTree = "<group>"; };
 		44728C2F1B0F916E009D4136 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		44728C301B0F916E009D4136 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
-		4476F84B1B06790200E62CC8 /* EPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPButton.h; sourceTree = "<group>"; };
-		4476F84C1B06790200E62CC8 /* EPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPButton.m; sourceTree = "<group>"; };
+		44728C331B0F9672009D4136 /* EPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPButton.h; path = Source/EPButton.h; sourceTree = "<group>"; };
+		44728C341B0F9672009D4136 /* EPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPButton.m; path = Source/EPButton.m; sourceTree = "<group>"; };
+		44728C351B0F9672009D4136 /* EPLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPLayer.h; path = Source/EPLayer.h; sourceTree = "<group>"; };
+		44728C361B0F9672009D4136 /* EPLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPLayer.m; path = Source/EPLayer.m; sourceTree = "<group>"; };
+		44728C391B0F968E009D4136 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainView.xib; path = "View Controllers/MainView.xib"; sourceTree = "<group>"; };
+		44728C3A1B0F968E009D4136 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = "View Controllers/MainViewController.h"; sourceTree = "<group>"; };
+		44728C3B1B0F968E009D4136 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = "View Controllers/MainViewController.m"; sourceTree = "<group>"; };
 		44D279031AC01B4400F0D46F /* EPMaterialKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPMaterialKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D279071AC01B4400F0D46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44D279081AC01B4400F0D46F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		44D2790A1AC01B4400F0D46F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		44D2790B1AC01B4400F0D46F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		44D2790D1AC01B4400F0D46F /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		44D2790E1AC01B4400F0D46F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		44D279131AC01B4400F0D46F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		44D2791C1AC01B4400F0D46F /* EPMaterialKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPMaterialKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D279211AC01B4400F0D46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44D279221AC01B4400F0D46F /* EPMaterialKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPMaterialKitTests.m; sourceTree = "<group>"; };
-		44D2792C1AC021DC00F0D46F /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		44D2792E1AC0266900F0D46F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +93,9 @@
 		44728C251B0F8B94009D4136 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				44728C391B0F968E009D4136 /* MainView.xib */,
+				44728C3A1B0F968E009D4136 /* MainViewController.h */,
+				44728C3B1B0F968E009D4136 /* MainViewController.m */,
 				44728C261B0F8BED009D4136 /* ButtonsViewController.h */,
 				44728C271B0F8BED009D4136 /* ButtonsViewController.m */,
 				44728C281B0F8BED009D4136 /* ButtonsView.xib */,
@@ -112,6 +115,10 @@
 		44728C321B0F9406009D4136 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				44728C331B0F9672009D4136 /* EPButton.h */,
+				44728C341B0F9672009D4136 /* EPButton.m */,
+				44728C351B0F9672009D4136 /* EPLayer.h */,
+				44728C361B0F9672009D4136 /* EPLayer.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -140,15 +147,8 @@
 				44728C2B1B0F8FED009D4136 /* Categories */,
 				44728C251B0F8B94009D4136 /* View Controllers */,
 				44728C321B0F9406009D4136 /* Source */,
-				446A4F681AF16F6C00A1ED3A /* EPLayer.h */,
-				446A4F691AF16F6C00A1ED3A /* EPLayer.m */,
-				4476F84B1B06790200E62CC8 /* EPButton.h */,
-				4476F84C1B06790200E62CC8 /* EPButton.m */,
 				44D2790A1AC01B4400F0D46F /* AppDelegate.h */,
 				44D2790B1AC01B4400F0D46F /* AppDelegate.m */,
-				44D2790D1AC01B4400F0D46F /* MainViewController.h */,
-				44D2790E1AC01B4400F0D46F /* MainViewController.m */,
-				44D2792C1AC021DC00F0D46F /* MainView.xib */,
 				44728C2F1B0F916E009D4136 /* Global.h */,
 				44728C301B0F916E009D4136 /* Global.m */,
 				44D279131AC01B4400F0D46F /* Images.xcassets */,
@@ -268,8 +268,8 @@
 			files = (
 				44D279141AC01B4400F0D46F /* Images.xcassets in Resources */,
 				44728C241B0F8B43009D4136 /* icon2.png in Resources */,
-				44D2792D1AC021DC00F0D46F /* MainView.xib in Resources */,
 				44728C231B0F8B43009D4136 /* icon1.png in Resources */,
+				44728C3C1B0F968E009D4136 /* MainView.xib in Resources */,
 				44728C2A1B0F8BED009D4136 /* ButtonsView.xib in Resources */,
 				44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */,
 			);
@@ -291,12 +291,12 @@
 			files = (
 				44728C291B0F8BED009D4136 /* ButtonsViewController.m in Sources */,
 				44728C2E1B0F9050009D4136 /* UIColor+Extra.m in Sources */,
-				44D2790F1AC01B4400F0D46F /* MainViewController.m in Sources */,
 				44D2790C1AC01B4400F0D46F /* AppDelegate.m in Sources */,
+				44728C3D1B0F968E009D4136 /* MainViewController.m in Sources */,
 				44728C311B0F916E009D4136 /* Global.m in Sources */,
-				4476F84D1B06790200E62CC8 /* EPButton.m in Sources */,
-				446A4F6A1AF16F6C00A1ED3A /* EPLayer.m in Sources */,
 				44D279091AC01B4400F0D46F /* main.m in Sources */,
+				44728C381B0F9672009D4136 /* EPLayer.m in Sources */,
+				44728C371B0F9672009D4136 /* EPButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
