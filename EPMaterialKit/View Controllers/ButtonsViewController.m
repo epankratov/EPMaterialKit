@@ -25,6 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setTitle:@"Buttons demo"];
+
     self.raisedButton.layer.shadowOpacity = 0.55;
     self.raisedButton.layer.shadowRadius = 5.0;
     self.raisedButton.layer.shadowColor = [UIColor grayColor].CGColor;
