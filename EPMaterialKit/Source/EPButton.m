@@ -84,13 +84,15 @@
 
 - (void)setRippleLayerColor:(UIColor *)rippleLayerColor
 {
-    _rippleLayerColor = rippleLayerColor;
+    [_rippleLayerColor release];
+    _rippleLayerColor = [rippleLayerColor retain];
     [_epLayer setCircleLayerColor:rippleLayerColor];
 }
 
 - (void)setBackgroundLayerColor:(UIColor *)backgroundLayerColor
 {
-    _backgroundLayerColor = backgroundLayerColor;
+    [_backgroundLayerColor release];
+    _backgroundLayerColor = [backgroundLayerColor retain];
     [_epLayer setBackgroundLayerColor:backgroundLayerColor];
 }
 
@@ -149,6 +151,7 @@
 
 - (void)dealloc
 {
+    [_epLayer release];
     [_rippleLayerColor release];
     [_backgroundLayerColor release];
     [super dealloc];

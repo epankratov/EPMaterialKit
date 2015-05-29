@@ -43,31 +43,25 @@
     return self;
 }
 
-//- (void)awakeFromNib
-//{
-//    // Initialization code
-//}
-//
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-//{
-//    [super setSelected:selected animated:animated];
-//    // Configure the view for the selected state
-//}
-
 #pragma mark - Setters
 
 - (void)setRippleLocation:(EPRippleLocation)rippleLocation
 {
+    _rippleLocation = rippleLocation;
     _epLayer.rippleLocation = rippleLocation;
 }
 
 - (void)setRippleLayerColor:(UIColor *)rippleLayerColor
 {
+    [_rippleLayerColor release];
+    _rippleLayerColor = [rippleLayerColor retain];
     [_epLayer setCircleLayerColor:rippleLayerColor];
 }
 
 - (void)setBackgroundLayerColor:(UIColor *)backgroundLayerColor
 {
+    [_backgroundLayerColor release];
+    _backgroundLayerColor = [backgroundLayerColor retain];
     [_epLayer setBackgroundLayerColor:backgroundLayerColor];
 }
 
@@ -107,6 +101,9 @@
 
 - (void)dealloc
 {
+    [_epLayer release];
+    [_rippleLayerColor release];
+    [_backgroundLayerColor release];
     [super dealloc];
 }
 
