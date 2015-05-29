@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44241AD31B18C4E7006B757F /* TableCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44241AD11B18C4E7006B757F /* TableCellViewController.m */; };
+		44241AD41B18C4E7006B757F /* TableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44241AD21B18C4E7006B757F /* TableCellView.xib */; };
+		44241AD71B18C946006B757F /* MyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44241AD61B18C946006B757F /* MyTableCell.m */; };
+		44241ADA1B18CA76006B757F /* EPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44241AD91B18CA76006B757F /* EPTableViewCell.m */; };
+		44241ADF1B18D6DB006B757F /* MyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44241ADD1B18D6DB006B757F /* MyTableCell.xib */; };
 		44728C231B0F8B43009D4136 /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44728C211B0F8B43009D4136 /* icon1.png */; };
 		44728C241B0F8B43009D4136 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44728C221B0F8B43009D4136 /* icon2.png */; };
 		44728C291B0F8BED009D4136 /* ButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44728C271B0F8BED009D4136 /* ButtonsViewController.m */; };
@@ -35,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44241AD01B18C4E7006B757F /* TableCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableCellViewController.h; path = "View Controllers/TableCellViewController.h"; sourceTree = "<group>"; };
+		44241AD11B18C4E7006B757F /* TableCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableCellViewController.m; path = "View Controllers/TableCellViewController.m"; sourceTree = "<group>"; };
+		44241AD21B18C4E7006B757F /* TableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableCellView.xib; path = "View Controllers/TableCellView.xib"; sourceTree = "<group>"; };
+		44241AD51B18C946006B757F /* MyTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTableCell.h; path = "View Controllers/MyTableCell.h"; sourceTree = "<group>"; };
+		44241AD61B18C946006B757F /* MyTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTableCell.m; path = "View Controllers/MyTableCell.m"; sourceTree = "<group>"; };
+		44241AD81B18CA76006B757F /* EPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPTableViewCell.h; path = Source/EPTableViewCell.h; sourceTree = "<group>"; };
+		44241AD91B18CA76006B757F /* EPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPTableViewCell.m; path = Source/EPTableViewCell.m; sourceTree = "<group>"; };
+		44241ADD1B18D6DB006B757F /* MyTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyTableCell.xib; path = "View Controllers/MyTableCell.xib"; sourceTree = "<group>"; };
 		44728C211B0F8B43009D4136 /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
 		44728C221B0F8B43009D4136 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 		44728C261B0F8BED009D4136 /* ButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonsViewController.h; path = "View Controllers/ButtonsViewController.h"; sourceTree = "<group>"; };
@@ -99,6 +112,12 @@
 				44728C261B0F8BED009D4136 /* ButtonsViewController.h */,
 				44728C271B0F8BED009D4136 /* ButtonsViewController.m */,
 				44728C281B0F8BED009D4136 /* ButtonsView.xib */,
+				44241AD01B18C4E7006B757F /* TableCellViewController.h */,
+				44241AD11B18C4E7006B757F /* TableCellViewController.m */,
+				44241AD21B18C4E7006B757F /* TableCellView.xib */,
+				44241AD51B18C946006B757F /* MyTableCell.h */,
+				44241AD61B18C946006B757F /* MyTableCell.m */,
+				44241ADD1B18D6DB006B757F /* MyTableCell.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -119,6 +138,8 @@
 				44728C341B0F9672009D4136 /* EPButton.m */,
 				44728C351B0F9672009D4136 /* EPLayer.h */,
 				44728C361B0F9672009D4136 /* EPLayer.m */,
+				44241AD81B18CA76006B757F /* EPTableViewCell.h */,
+				44241AD91B18CA76006B757F /* EPTableViewCell.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -266,10 +287,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44241AD41B18C4E7006B757F /* TableCellView.xib in Resources */,
 				44D279141AC01B4400F0D46F /* Images.xcassets in Resources */,
 				44728C241B0F8B43009D4136 /* icon2.png in Resources */,
 				44728C231B0F8B43009D4136 /* icon1.png in Resources */,
 				44728C3C1B0F968E009D4136 /* MainView.xib in Resources */,
+				44241ADF1B18D6DB006B757F /* MyTableCell.xib in Resources */,
 				44728C2A1B0F8BED009D4136 /* ButtonsView.xib in Resources */,
 				44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */,
 			);
@@ -297,6 +320,9 @@
 				44D279091AC01B4400F0D46F /* main.m in Sources */,
 				44728C381B0F9672009D4136 /* EPLayer.m in Sources */,
 				44728C371B0F9672009D4136 /* EPButton.m in Sources */,
+				44241AD71B18C946006B757F /* MyTableCell.m in Sources */,
+				44241AD31B18C4E7006B757F /* TableCellViewController.m in Sources */,
+				44241ADA1B18CA76006B757F /* EPTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
