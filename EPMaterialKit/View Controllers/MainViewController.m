@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "ButtonsViewController.h"
+#import "TableCellViewController.h"
 
 @interface MainViewController ()
 
@@ -41,6 +42,7 @@
 - (void)dealloc
 {
     [_buttonViewController release];
+    [_buttonTableCellViewController release];
     [super dealloc];
 }
 
@@ -49,6 +51,13 @@
 - (IBAction)showButtonViewController:(id)sender
 {
     ButtonsViewController *viewController = [[ButtonsViewController alloc] initWithNibName:@"ButtonsView" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+    [viewController release];
+}
+
+- (IBAction)showTableCellViewController:(id)sender
+{
+    TableCellViewController *viewController = [[TableCellViewController alloc] initWithNibName:@"TableCellView" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
     [viewController release];
 }
