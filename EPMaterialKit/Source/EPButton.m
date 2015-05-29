@@ -22,6 +22,8 @@
 
 @implementation EPButton
 
+#pragma mark - Designated initializers
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -143,8 +145,12 @@
     self.backgroundLayerColor = [UIColor colorWithWhite:0.75f alpha:0.25f];
 }
 
+#pragma mark - Memory management
+
 - (void)dealloc
 {
+    [_rippleLayerColor release];
+    [_backgroundLayerColor release];
     [super dealloc];
 }
 
