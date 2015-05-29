@@ -10,15 +10,13 @@
 
 @implementation MyTableCell
 
-- (void)awakeFromNib
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    // Initialization code
-    [super awakeFromNib];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+    }
+    return self;
 }
 
 - (void)setLayoutMargins:(UIEdgeInsets)layoutMargins
@@ -33,13 +31,13 @@
 
 - (void)setMessage:(NSString *)messageString
 {
-    self.messageLabel.text = messageString;
+    self.labelMessage.text = messageString;
     [self setNeedsDisplay];
 }
 
 - (void)dealloc
 {
-    [_messageLabel release];
+    [_labelMessage release];
     [super dealloc];
 }
 

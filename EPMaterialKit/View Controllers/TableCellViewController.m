@@ -9,6 +9,8 @@
 #import "TableCellViewController.h"
 #import "MyTableCell.h"
 
+static NSString *cellIdentifier = @"MyTableCell";
+
 @interface TableCellViewController () {
     NSArray *_labels;
     NSArray *_rippleLocations;
@@ -63,14 +65,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"MyTableCell";
     MyTableCell *cell = (MyTableCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
     if (cell == nil) {
-        cell = [[MyTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        NSArray *nibs = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:self options:nil];
+        cell = (MyTableCell *)[nibs objectAtIndex:0];
     }
     [cell setMessage:_labels[indexPath.row]];
-    cell.rippleLocation = (EPRippleLocation)[[_rippleLocations objectAtIndex:indexPath.row] integerValue];
+    EPRippleLocation rippleLocation = (EPRippleLocation)[[_rippleLocations objectAtIndex:indexPath.row] integerValue];
+    cell.rippleLocation = rippleLocation;
     NSInteger index = indexPath.row % _circleColors.count;
     cell.rippleLayerColor = [_circleColors objectAtIndex:index];
     return cell;

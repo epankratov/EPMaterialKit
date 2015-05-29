@@ -13,7 +13,7 @@
 
 }
 
-@property (nonatomic, strong) IBOutlet UILabel *messageLabel;
+@property (nonatomic, strong) IBOutlet UILabel *labelMessage;
 
 - (void)setMessage:(NSString *)messageString;
 
