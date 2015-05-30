@@ -29,16 +29,18 @@
 
     self.raisedButton.layer.shadowOpacity = 0.55;
     self.raisedButton.layer.shadowRadius = 5.0;
-    self.raisedButton.aniDuration = 0.25;
+    self.raisedButton.aniDuration = 0.5;
     self.raisedButton.layer.shadowColor = [UIColor grayColor].CGColor;
     self.raisedButton.layer.shadowOffset = CGSizeMake(0, 2.5);
+    self.raisedButton.rippleLayerColor = [UIColor Amber];
 
     self.flatButton1.backgroundLayerColor = [UIColor Lime];
     self.flatButton1.layer.shadowOpacity = 0.5;
     self.flatButton1.layer.shadowRadius = 5.0;
     self.flatButton1.layer.shadowColor = [UIColor blackColor].CGColor;
     self.flatButton1.layer.shadowOffset = CGSizeMake(0, 2.5);
-
+    self.flatButton1.rippleLocation = EPRippleLocationTapLocation;
+    
     self.flatButton2.maskEnabled = false;
     self.flatButton2.ripplePercent = 0.5;
     self.flatButton2.backgroundAniEnabled = false;
