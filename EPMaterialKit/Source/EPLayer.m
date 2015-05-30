@@ -125,7 +125,8 @@
     _backgroundLayer.frame = _superLayer.bounds;
     [self setMaskLayerCornerRadius:_superLayer.cornerRadius];
     [CATransaction commit];
-    [self setCircleLayerLocationAt:CGPointMake(_superLayer.bounds.size.width / 2, _superLayer.bounds.size.height / 2)];
+    [self setRippleLocation:self.rippleLocation];
+//    [self setCircleLayerLocationAt:CGPointMake(_superLayer.bounds.size.width / 2, _superLayer.bounds.size.height / 2)];
 }
 
 - (void)enableOnlyCircleLayer
