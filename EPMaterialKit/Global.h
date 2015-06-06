@@ -12,6 +12,9 @@
 #import "AppDelegate.h"
 #import "EPButton.h"
 #import "EPTableViewCell.h"
+#import "EPLabel.h"
+#import "EPTextField.h"
+#import "EPImageView.h"
 #import "UIColor+Extra.h"
 
 /**
