@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440A457C1B22007E00CB9EF7 /* EPLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 440A457B1B22007E00CB9EF7 /* EPLabel.m */; };
+		440A45801B22013800CB9EF7 /* TextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440A457E1B22013800CB9EF7 /* TextFieldViewController.m */; };
+		440A45811B22013800CB9EF7 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A457F1B22013800CB9EF7 /* TextFieldView.xib */; };
+		440A45841B2201BA00CB9EF7 /* EPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 440A45831B2201BA00CB9EF7 /* EPTextField.m */; };
+		440A45881B2202DF00CB9EF7 /* BarButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 440A45861B2202DF00CB9EF7 /* BarButtonViewController.m */; };
+		440A45891B2202DF00CB9EF7 /* BarButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 440A45871B2202DF00CB9EF7 /* BarButtonView.xib */; };
+		440A458C1B22044200CB9EF7 /* uibaritem_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 440A458A1B22044200CB9EF7 /* uibaritem_icon.png */; };
+		440A458D1B22044200CB9EF7 /* wall-e.png in Resources */ = {isa = PBXBuildFile; fileRef = 440A458B1B22044200CB9EF7 /* wall-e.png */; };
+		440A45901B2204A400CB9EF7 /* EPImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 440A458F1B2204A400CB9EF7 /* EPImageView.m */; };
 		44241AD31B18C4E7006B757F /* TableCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44241AD11B18C4E7006B757F /* TableCellViewController.m */; };
 		44241AD41B18C4E7006B757F /* TableCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44241AD21B18C4E7006B757F /* TableCellView.xib */; };
 		44241AD71B18C946006B757F /* MyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44241AD61B18C946006B757F /* MyTableCell.m */; };
@@ -40,6 +49,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		440A457A1B22007E00CB9EF7 /* EPLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPLabel.h; path = Source/EPLabel.h; sourceTree = "<group>"; };
+		440A457B1B22007E00CB9EF7 /* EPLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPLabel.m; path = Source/EPLabel.m; sourceTree = "<group>"; };
+		440A457D1B22013800CB9EF7 /* TextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldViewController.h; path = "View Controllers/TextFieldViewController.h"; sourceTree = "<group>"; };
+		440A457E1B22013800CB9EF7 /* TextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextFieldViewController.m; path = "View Controllers/TextFieldViewController.m"; sourceTree = "<group>"; };
+		440A457F1B22013800CB9EF7 /* TextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFieldView.xib; path = "View Controllers/TextFieldView.xib"; sourceTree = "<group>"; };
+		440A45821B2201BA00CB9EF7 /* EPTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPTextField.h; path = Source/EPTextField.h; sourceTree = "<group>"; };
+		440A45831B2201BA00CB9EF7 /* EPTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPTextField.m; path = Source/EPTextField.m; sourceTree = "<group>"; };
+		440A45851B2202DF00CB9EF7 /* BarButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarButtonViewController.h; path = "View Controllers/BarButtonViewController.h"; sourceTree = "<group>"; };
+		440A45861B2202DF00CB9EF7 /* BarButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarButtonViewController.m; path = "View Controllers/BarButtonViewController.m"; sourceTree = "<group>"; };
+		440A45871B2202DF00CB9EF7 /* BarButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BarButtonView.xib; path = "View Controllers/BarButtonView.xib"; sourceTree = "<group>"; };
+		440A458A1B22044200CB9EF7 /* uibaritem_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uibaritem_icon.png; sourceTree = "<group>"; };
+		440A458B1B22044200CB9EF7 /* wall-e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wall-e.png"; sourceTree = "<group>"; };
+		440A458E1B2204A400CB9EF7 /* EPImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPImageView.h; path = Source/EPImageView.h; sourceTree = "<group>"; };
+		440A458F1B2204A400CB9EF7 /* EPImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPImageView.m; path = Source/EPImageView.m; sourceTree = "<group>"; };
 		44241AD01B18C4E7006B757F /* TableCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableCellViewController.h; path = "View Controllers/TableCellViewController.h"; sourceTree = "<group>"; };
 		44241AD11B18C4E7006B757F /* TableCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableCellViewController.m; path = "View Controllers/TableCellViewController.m"; sourceTree = "<group>"; };
 		44241AD21B18C4E7006B757F /* TableCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableCellView.xib; path = "View Controllers/TableCellView.xib"; sourceTree = "<group>"; };
@@ -97,6 +120,8 @@
 		44728C201B0F8B43009D4136 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				440A458A1B22044200CB9EF7 /* uibaritem_icon.png */,
+				440A458B1B22044200CB9EF7 /* wall-e.png */,
 				44728C211B0F8B43009D4136 /* icon1.png */,
 				44728C221B0F8B43009D4136 /* icon2.png */,
 			);
@@ -118,6 +143,12 @@
 				44241AD51B18C946006B757F /* MyTableCell.h */,
 				44241AD61B18C946006B757F /* MyTableCell.m */,
 				44241ADD1B18D6DB006B757F /* MyTableCell.xib */,
+				440A457D1B22013800CB9EF7 /* TextFieldViewController.h */,
+				440A457E1B22013800CB9EF7 /* TextFieldViewController.m */,
+				440A457F1B22013800CB9EF7 /* TextFieldView.xib */,
+				440A45851B2202DF00CB9EF7 /* BarButtonViewController.h */,
+				440A45861B2202DF00CB9EF7 /* BarButtonViewController.m */,
+				440A45871B2202DF00CB9EF7 /* BarButtonView.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -140,6 +171,12 @@
 				44728C361B0F9672009D4136 /* EPLayer.m */,
 				44241AD81B18CA76006B757F /* EPTableViewCell.h */,
 				44241AD91B18CA76006B757F /* EPTableViewCell.m */,
+				440A457A1B22007E00CB9EF7 /* EPLabel.h */,
+				440A457B1B22007E00CB9EF7 /* EPLabel.m */,
+				440A45821B2201BA00CB9EF7 /* EPTextField.h */,
+				440A45831B2201BA00CB9EF7 /* EPTextField.m */,
+				440A458E1B2204A400CB9EF7 /* EPImageView.h */,
+				440A458F1B2204A400CB9EF7 /* EPImageView.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -292,9 +329,13 @@
 				44728C241B0F8B43009D4136 /* icon2.png in Resources */,
 				44728C231B0F8B43009D4136 /* icon1.png in Resources */,
 				44728C3C1B0F968E009D4136 /* MainView.xib in Resources */,
+				440A45811B22013800CB9EF7 /* TextFieldView.xib in Resources */,
+				440A45891B2202DF00CB9EF7 /* BarButtonView.xib in Resources */,
 				44241ADF1B18D6DB006B757F /* MyTableCell.xib in Resources */,
 				44728C2A1B0F8BED009D4136 /* ButtonsView.xib in Resources */,
 				44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */,
+				440A458C1B22044200CB9EF7 /* uibaritem_icon.png in Resources */,
+				440A458D1B22044200CB9EF7 /* wall-e.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,17 +353,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440A45841B2201BA00CB9EF7 /* EPTextField.m in Sources */,
 				44728C291B0F8BED009D4136 /* ButtonsViewController.m in Sources */,
+				440A457C1B22007E00CB9EF7 /* EPLabel.m in Sources */,
 				44728C2E1B0F9050009D4136 /* UIColor+Extra.m in Sources */,
 				44D2790C1AC01B4400F0D46F /* AppDelegate.m in Sources */,
 				44728C3D1B0F968E009D4136 /* MainViewController.m in Sources */,
+				440A45881B2202DF00CB9EF7 /* BarButtonViewController.m in Sources */,
 				44728C311B0F916E009D4136 /* Global.m in Sources */,
 				44D279091AC01B4400F0D46F /* main.m in Sources */,
 				44728C381B0F9672009D4136 /* EPLayer.m in Sources */,
 				44728C371B0F9672009D4136 /* EPButton.m in Sources */,
+				440A45901B2204A400CB9EF7 /* EPImageView.m in Sources */,
 				44241AD71B18C946006B757F /* MyTableCell.m in Sources */,
 				44241AD31B18C4E7006B757F /* TableCellViewController.m in Sources */,
 				44241ADA1B18CA76006B757F /* EPTableViewCell.m in Sources */,
+				440A45801B22013800CB9EF7 /* TextFieldViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
