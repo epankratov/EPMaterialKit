@@ -29,11 +29,15 @@
     return UIEdgeInsetsZero;
 }
 
+#pragma mark - Public methods
+
 - (void)setMessage:(NSString *)messageString
 {
     self.labelMessage.text = messageString;
     [self setNeedsDisplay];
 }
+
+#pragma mark - Memory management
 
 - (void)dealloc
 {

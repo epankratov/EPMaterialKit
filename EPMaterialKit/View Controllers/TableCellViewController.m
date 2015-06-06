@@ -20,6 +20,8 @@ static NSString *cellIdentifier = @"MyTableCell";
 
 @implementation TableCellViewController
 
+#pragma mark - ViewController lifetime methods
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,6 +38,8 @@ static NSString *cellIdentifier = @"MyTableCell";
     [super viewDidLoad];
     [self.tableView reloadData];
 }
+
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
 {

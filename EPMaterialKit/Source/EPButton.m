@@ -102,6 +102,8 @@
     [_epLayer superLayerDidResize];
 }
 
+#pragma mark - Touches handling
+
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if (self.rippleLocation == EPRippleLocationTapLocation) {

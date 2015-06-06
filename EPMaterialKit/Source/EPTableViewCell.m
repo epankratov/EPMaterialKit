@@ -23,7 +23,7 @@
 
 @implementation EPTableViewCell
 
-#pragma mark - Deisgnated initializers
+#pragma mark - Designated initializers
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

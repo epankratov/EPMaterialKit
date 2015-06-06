@@ -14,6 +14,8 @@
 
 @implementation ButtonsViewController
 
+#pragma mark - ViewController lifetime methods
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -71,6 +73,8 @@
     self.floatButton2.layer.shadowColor = [UIColor blackColor].CGColor;
     self.floatButton2.layer.shadowOffset = CGSizeMake(1.0, 5.5);
 }
+
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
 {
