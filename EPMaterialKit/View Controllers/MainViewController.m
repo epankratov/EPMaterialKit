@@ -9,12 +9,16 @@
 #import "MainViewController.h"
 #import "ButtonsViewController.h"
 #import "TableCellViewController.h"
+#import "TextFieldViewController.h"
+#import "BarButtonViewController.h"
 
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController
+
+#pragma mark - ViewController lifetime methods
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +47,8 @@
 {
     [_buttonViewController release];
     [_buttonTableCellViewController release];
+    [_buttonTextFieldViewController release];
+    [_buttonBarButtonViewController release];
     [super dealloc];
 }
 
@@ -58,6 +64,20 @@
 - (IBAction)showTableCellViewController:(id)sender
 {
     TableCellViewController *viewController = [[TableCellViewController alloc] initWithNibName:@"TableCellView" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+    [viewController release];
+}
+
+- (IBAction)showTextFieldViewController:(id)sender
+{
+    TextFieldViewController *viewController = [[TextFieldViewController alloc] initWithNibName:@"TextFieldView" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+    [viewController release];
+}
+
+- (IBAction)showBarButtonViewController:(id)sender
+{
+    BarButtonViewController *viewController = [[BarButtonViewController alloc] initWithNibName:@"BarButtonView" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
     [viewController release];
 }

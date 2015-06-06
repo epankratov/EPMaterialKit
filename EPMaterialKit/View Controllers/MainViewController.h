@@ -15,8 +15,12 @@
 
 @property (nonatomic, strong) IBOutlet EPButton *buttonViewController;
 @property (nonatomic, strong) IBOutlet EPButton *buttonTableCellViewController;
+@property (nonatomic, strong) IBOutlet EPButton *buttonTextFieldViewController;
+@property (nonatomic, strong) IBOutlet EPButton *buttonBarButtonViewController;
 
 - (IBAction)showButtonViewController:(id)sender;
 - (IBAction)showTableCellViewController:(id)sender;
+- (IBAction)showTextFieldViewController:(id)sender;
+- (IBAction)showBarButtonViewController:(id)sender;
 
 @end
