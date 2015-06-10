@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Global.h"
 
-@interface TextFieldViewController : UIViewController {
+@interface TextFieldViewController : UIViewController <UITextFieldDelegate> {
 
 }
 

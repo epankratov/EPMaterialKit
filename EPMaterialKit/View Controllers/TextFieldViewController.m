@@ -84,6 +84,12 @@ const CGFloat kViewGapDistance = 35.0;
     self.textField6.tintColor = [UIColor LightGreen];
     self.textField6.tag = 5;
 
+    self.textField1.delegate = self;
+    self.textField2.delegate = self;
+    self.textField3.delegate = self;
+    self.textField4.delegate = self;
+    self.textField5.delegate = self;
+    self.textField6.delegate = self;
     // Subscribe onto keyboard notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -144,6 +150,35 @@ const CGFloat kViewGapDistance = 35.0;
                      }];
 }
 
+#pragma mark - UITextField delegate methods
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField
+{
+    [theTextField resignFirstResponder];
+    NSInteger tag = theTextField.tag;
+    if (++tag > 5) {
+        tag = 0;
+    }
+    EPTextField *nextTextField = nil;
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:[UITextField class]]) {
+            EPTextField *textField = (EPTextField *)view;
+            if (textField.tag == tag) {
+                nextTextField = textField;
+                break;
+            }
+        }
+    }
+    if (nextTextField != nil)
+        [nextTextField becomeFirstResponder];
+    return YES;
+}
+
 #pragma mark - Touches handling
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -161,6 +196,7 @@ const CGFloat kViewGapDistance = 35.0;
             EPTextField *textField = (EPTextField *)view;
             if ([textField isFirstResponder]) {
                 gap = textField.tag * kViewGapDistance;
+                break;
             }
         }
     }
