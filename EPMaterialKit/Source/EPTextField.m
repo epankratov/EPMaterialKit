@@ -151,10 +151,12 @@
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
-    [super setPlaceholder:placeholder];
-    _floatingLabel.text = placeholder;
-    [_floatingLabel sizeToFit];
-    [self setFloatingLabelOverlapTextField];
+    if (placeholder && placeholder.length) {
+        [super setPlaceholder:placeholder];
+        _floatingLabel.text = placeholder;
+        [_floatingLabel sizeToFit];
+        [self setFloatingLabelOverlapTextField];
+    }
 }
 
 - (void)setBounds:(CGRect)bounds
@@ -180,7 +182,7 @@
     _epLayer = [[EPLayer alloc] initWithSuperLayer:self.layer];
     self.padding = CGSizeMake(5, 5);
     self.floatingLabelBottomMargin = 2.0;
-    self.floatingPlaceholderEnabled = TRUE;
+    self.floatingPlaceholderEnabled = FALSE;
     self.rippleLocation = EPRippleLocationTapLocation;
     self.aniDuration = 0.65f;
     self.rippleAniTimingFunction = EPTimingFunctionLinear;
