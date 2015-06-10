@@ -130,7 +130,7 @@
 
 - (void)setFloatingLabelTextColor:(UIColor *)floatingLabelTextColor
 {
-    [floatingLabelTextColor release];
+    [_floatingLabelTextColor release];
     _floatingLabelTextColor = [floatingLabelTextColor retain];
     _floatingLabel.textColor = floatingLabelTextColor;
 }
