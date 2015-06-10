@@ -31,31 +31,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    EPImageView *imgView = [[EPImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 32)];
-    imgView.image = [UIImage imageNamed:@"uibaritem_icon.png"];
-    imgView.backgroundAniEnabled = FALSE;
-    imgView.rippleLocation = EPRippleLocationCenter;
-    imgView.ripplePercent = 1.15;
-    imgView.userInteractionEnabled = TRUE;
+    EPButton *button = [[EPButton alloc] initWithFrame:CGRectMake(0, 0, 44, 32)];
+    [button setImage:[UIImage imageNamed:@"uibaritem_icon.png"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(handleRightButton:) forControlEvents:UIControlEventTouchUpInside];
+    button.backgroundAniEnabled = FALSE;
+    button.rippleLocation = EPRippleLocationCenter;
+    button.ripplePercent = 1.15;
 
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(handleRightButton:)];
-    [rightButton setCustomView:imgView];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = rightButton;
     [rightButton release];
-    [imgView release];
+    [button release];
     
     self.label.rippleLocation = EPRippleLocationTapLocation;
     self.label.rippleLayerColor = [UIColor LightGreen];
     self.label.backgroundLayerColor = [UIColor clearColor];
     self.label.userInteractionEnabled = TRUE;
-    [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(animateLabelRipple:) userInfo:nil repeats:FALSE];
     
     self.imageView.layer.borderColor = [UIColor Grey].CGColor;
     self.imageView.layer.borderWidth = 1.0;
     self.imageView.ripplePercent = 1.2;
     self.imageView.rippleLocation = EPRippleLocationTapLocation;
     self.imageView.userInteractionEnabled = TRUE;
-    [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(animateImageRipple:) userInfo:nil repeats:FALSE];
 }
 
 #pragma mark - Memory management
