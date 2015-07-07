@@ -159,6 +159,12 @@
     }
 }
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    [_epLayer superLayerDidResize];
+}
+
 - (void)setBounds:(CGRect)bounds
 {
     [super setBounds:bounds];
