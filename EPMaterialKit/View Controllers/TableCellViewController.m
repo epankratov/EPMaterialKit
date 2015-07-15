@@ -39,6 +39,11 @@ static NSString *cellIdentifier = @"MyTableCell";
     [self.tableView reloadData];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [self.tableView setFrame:self.view.bounds];
+}
+
 #pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
