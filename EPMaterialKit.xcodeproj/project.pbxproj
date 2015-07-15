@@ -34,19 +34,8 @@
 		44D279091AC01B4400F0D46F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D279081AC01B4400F0D46F /* main.m */; };
 		44D2790C1AC01B4400F0D46F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D2790B1AC01B4400F0D46F /* AppDelegate.m */; };
 		44D279141AC01B4400F0D46F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D279131AC01B4400F0D46F /* Images.xcassets */; };
-		44D279231AC01B4400F0D46F /* EPMaterialKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D279221AC01B4400F0D46F /* EPMaterialKitTests.m */; };
 		44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D2792E1AC0266900F0D46F /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		44D2791D1AC01B4400F0D46F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 44D278FB1AC01B4400F0D46F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 44D279021AC01B4400F0D46F;
-			remoteInfo = EPMaterialKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		440A457A1B22007E00CB9EF7 /* EPLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPLabel.h; path = Source/EPLabel.h; sourceTree = "<group>"; };
@@ -93,21 +82,11 @@
 		44D2790A1AC01B4400F0D46F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		44D2790B1AC01B4400F0D46F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		44D279131AC01B4400F0D46F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		44D2791C1AC01B4400F0D46F /* EPMaterialKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EPMaterialKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		44D279211AC01B4400F0D46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44D279221AC01B4400F0D46F /* EPMaterialKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPMaterialKitTests.m; sourceTree = "<group>"; };
 		44D2792E1AC0266900F0D46F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		44D279001AC01B4400F0D46F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		44D279191AC01B4400F0D46F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -185,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				44D279051AC01B4400F0D46F /* EPMaterialKit */,
-				44D2791F1AC01B4400F0D46F /* EPMaterialKitTests */,
 				44D279041AC01B4400F0D46F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -194,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				44D279031AC01B4400F0D46F /* EPMaterialKit.app */,
-				44D2791C1AC01B4400F0D46F /* EPMaterialKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,23 +203,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		44D2791F1AC01B4400F0D46F /* EPMaterialKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				44D279221AC01B4400F0D46F /* EPMaterialKitTests.m */,
-				44D279201AC01B4400F0D46F /* Supporting Files */,
-			);
-			path = EPMaterialKitTests;
-			sourceTree = "<group>";
-		};
-		44D279201AC01B4400F0D46F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				44D279211AC01B4400F0D46F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,24 +223,6 @@
 			productReference = 44D279031AC01B4400F0D46F /* EPMaterialKit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		44D2791B1AC01B4400F0D46F /* EPMaterialKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 44D279291AC01B4400F0D46F /* Build configuration list for PBXNativeTarget "EPMaterialKitTests" */;
-			buildPhases = (
-				44D279181AC01B4400F0D46F /* Sources */,
-				44D279191AC01B4400F0D46F /* Frameworks */,
-				44D2791A1AC01B4400F0D46F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				44D2791E1AC01B4400F0D46F /* PBXTargetDependency */,
-			);
-			name = EPMaterialKitTests;
-			productName = EPMaterialKitTests;
-			productReference = 44D2791C1AC01B4400F0D46F /* EPMaterialKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,11 +234,6 @@
 				TargetAttributes = {
 					44D279021AC01B4400F0D46F = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = MF65X7VRCE;
-					};
-					44D2791B1AC01B4400F0D46F = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 44D279021AC01B4400F0D46F;
 					};
 				};
 			};
@@ -314,7 +251,6 @@
 			projectRoot = "";
 			targets = (
 				44D279021AC01B4400F0D46F /* EPMaterialKit */,
-				44D2791B1AC01B4400F0D46F /* EPMaterialKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -336,13 +272,6 @@
 				44D2792F1AC0266900F0D46F /* Default-568h@2x.png in Resources */,
 				440A458C1B22044200CB9EF7 /* uibaritem_icon.png in Resources */,
 				440A458D1B22044200CB9EF7 /* wall-e.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		44D2791A1AC01B4400F0D46F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,23 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		44D279181AC01B4400F0D46F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				44D279231AC01B4400F0D46F /* EPMaterialKitTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		44D2791E1AC01B4400F0D46F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 44D279021AC01B4400F0D46F /* EPMaterialKit */;
-			targetProxy = 44D2791D1AC01B4400F0D46F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		44D279241AC01B4400F0D46F /* Debug */ = {
@@ -473,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = EPMaterialKit/Info.plist;
@@ -487,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = EPMaterialKit/Info.plist;
@@ -494,40 +409,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		44D2792A1AC01B4400F0D46F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = EPMaterialKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EPMaterialKit.app/EPMaterialKit";
-			};
-			name = Debug;
-		};
-		44D2792B1AC01B4400F0D46F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = EPMaterialKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EPMaterialKit.app/EPMaterialKit";
 			};
 			name = Release;
 		};
@@ -548,15 +429,6 @@
 			buildConfigurations = (
 				44D279271AC01B4400F0D46F /* Debug */,
 				44D279281AC01B4400F0D46F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		44D279291AC01B4400F0D46F /* Build configuration list for PBXNativeTarget "EPMaterialKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				44D2792A1AC01B4400F0D46F /* Debug */,
-				44D2792B1AC01B4400F0D46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
