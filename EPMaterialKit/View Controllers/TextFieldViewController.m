@@ -11,10 +11,13 @@
 const CGFloat kViewGapDistance = 35.0;
 
 @interface TextFieldViewController () {
-    CGFloat _prevOriginY;
+
 }
 
-- (CGFloat)gapDistanceForFirstResponder;
+@property (nonatomic, assign) CGFloat defaultOriginY;
+@property (nonatomic, assign) BOOL isKeyboardVisible;
+
+- (CGFloat)viewPositionForCurrentResponder;
 
 @end
 
@@ -32,7 +35,7 @@ const CGFloat kViewGapDistance = 35.0;
 
 - (void)viewDidLoad
 {
-    _prevOriginY = 0;
+    self.defaultOriginY = 0;
     [super viewDidLoad];
     // No border, no shadow, floatPlaceHolder enabled
     self.textField1.layer.borderColor = [UIColor clearColor].CGColor;
@@ -108,23 +111,21 @@ const CGFloat kViewGapDistance = 35.0;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 
-    [_textField1 release];
-    [_textField2 release];
-    [_textField3 release];
-    [_textField4 release];
-    [_textField5 release];
-    [_textField6 release];
-    [super dealloc];
 }
 
 #pragma mark - Keyboard event notifications
 
 - (void)keyboardWillShow:(NSNotification *)aNotification
 {
+    if (!self.isKeyboardVisible) {
+        self.isKeyboardVisible = TRUE;
+        self.defaultOriginY = self.view.frame.origin.y;
+    }
     NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect frame = self.view.frame;
-    _prevOriginY = frame.origin.y;
-    frame.origin.y -= [self gapDistanceForFirstResponder];
+    CGFloat newOrigin = [self viewPositionForCurrentResponder];
+    frame.origin.y = -newOrigin;
+    self.view.frame = frame;
     [UIView animateWithDuration:animationDuration
                           delay:0.0f
                         options:UIViewAnimationOptionCurveLinear
@@ -137,9 +138,11 @@ const CGFloat kViewGapDistance = 35.0;
 
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
+    self.isKeyboardVisible = FALSE;
     NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect frame = self.view.frame;
-    frame.origin.y = _prevOriginY;
+    frame.origin.y = self.defaultOriginY;
+    self.view.frame = frame;
     [UIView animateWithDuration:animationDuration
                           delay:0.0f
                         options:UIViewAnimationOptionCurveLinear
@@ -188,7 +191,7 @@ const CGFloat kViewGapDistance = 35.0;
 
 #pragma mark - Private methods
 
-- (CGFloat)gapDistanceForFirstResponder
+- (CGFloat)viewPositionForCurrentResponder
 {
     CGFloat gap = 0;
     for (UIView *view in self.view.subviews) {

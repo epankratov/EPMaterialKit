@@ -12,10 +12,12 @@
 static NSString *cellIdentifier = @"MyTableCell";
 
 @interface TableCellViewController () {
-    NSArray *_labels;
-    NSArray *_rippleLocations;
-    NSArray *_circleColors;
 }
+
+@property (nonatomic, strong) NSArray *labels;
+@property (nonatomic, strong) NSArray *rippleLocations;
+@property (nonatomic, strong) NSArray *circleColors;
+
 @end
 
 @implementation TableCellViewController
@@ -26,9 +28,9 @@ static NSString *cellIdentifier = @"MyTableCell";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _labels = [NSArray arrayWithObjects:@"MKButton", @"MKTextField", @"MKTableViewCell", @"MKTextView", @"MKColor", @"MKLayer", @"MKAlert", @"MKCheckBox", nil];
-        _rippleLocations = [NSArray arrayWithObjects:@(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation),@(EPRippleLocationCenter), @(EPRippleLocationLeft), @(EPRippleLocationRight), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), nil];
-        _circleColors = [NSArray arrayWithObjects:[UIColor LightBlue], [UIColor Grey], [UIColor LightGreen], nil];
+        self.labels = [NSArray arrayWithObjects:@"MKButton", @"MKTextField", @"MKTableViewCell", @"MKTextView", @"MKColor", @"MKLayer", @"MKAlert", @"MKCheckBox", nil];
+        self.rippleLocations = [NSArray arrayWithObjects:@(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation),@(EPRippleLocationCenter), @(EPRippleLocationLeft), @(EPRippleLocationRight), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), nil];
+        self.circleColors = [NSArray arrayWithObjects:[UIColor LightBlue], [UIColor Grey], [UIColor LightGreen], nil];
     }
     return self;
 }
@@ -48,7 +50,7 @@ static NSString *cellIdentifier = @"MyTableCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_labels count];
+    return [self.labels count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,11 +66,11 @@ static NSString *cellIdentifier = @"MyTableCell";
         NSArray *nibs = [[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:self options:nil];
         cell = (MyTableCell *)[nibs objectAtIndex:0];
     }
-    [cell setMessage:_labels[indexPath.row]];
-    EPRippleLocation rippleLocation = (EPRippleLocation)[[_rippleLocations objectAtIndex:indexPath.row] integerValue];
+    [cell setMessage:self.labels[indexPath.row]];
+    EPRippleLocation rippleLocation = (EPRippleLocation)[[self.rippleLocations objectAtIndex:indexPath.row] integerValue];
     cell.rippleLocation = rippleLocation;
-    NSInteger index = indexPath.row % _circleColors.count;
-    cell.rippleLayerColor = [_circleColors objectAtIndex:index];
+    NSInteger index = indexPath.row % self.circleColors.count;
+    cell.rippleLayerColor = [self.circleColors objectAtIndex:index];
     return cell;
 }
 
