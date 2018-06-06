@@ -40,8 +40,6 @@
 
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = rightButton;
-    [rightButton release];
-    [button release];
     
     self.label.rippleLocation = EPRippleLocationTapLocation;
     self.label.rippleLayerColor = [UIColor LightGreen];
@@ -53,20 +51,6 @@
     self.imageView.ripplePercent = 1.2;
     self.imageView.rippleLocation = EPRippleLocationTapLocation;
     self.imageView.userInteractionEnabled = TRUE;
-}
-
-#pragma mark - Memory management
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc
-{
-    [_label release];
-    [_imageView release];
-    [super dealloc];
 }
 
 #pragma mark - Private methods and user actions handling

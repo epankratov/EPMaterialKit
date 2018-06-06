@@ -13,8 +13,7 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-    if (self)
-    {
+    if (self) {
     }
     return self;
 }
@@ -35,14 +34,6 @@
 {
     self.labelMessage.text = messageString;
     [self setNeedsDisplay];
-}
-
-#pragma mark - Memory management
-
-- (void)dealloc
-{
-    [_labelMessage release];
-    [super dealloc];
 }
 
 @end

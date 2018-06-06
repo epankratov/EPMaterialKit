@@ -26,9 +26,9 @@ static NSString *cellIdentifier = @"MyTableCell";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _labels = [[NSArray arrayWithObjects:@"MKButton", @"MKTextField", @"MKTableViewCell", @"MKTextView", @"MKColor", @"MKLayer", @"MKAlert", @"MKCheckBox", nil] retain];
-        _rippleLocations = [[NSArray arrayWithObjects:@(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation),@(EPRippleLocationCenter), @(EPRippleLocationLeft), @(EPRippleLocationRight), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), nil] retain];
-        _circleColors = [[NSArray arrayWithObjects:[UIColor LightBlue], [UIColor Grey], [UIColor LightGreen], nil] retain];
+        _labels = [NSArray arrayWithObjects:@"MKButton", @"MKTextField", @"MKTableViewCell", @"MKTextView", @"MKColor", @"MKLayer", @"MKAlert", @"MKCheckBox", nil];
+        _rippleLocations = [NSArray arrayWithObjects:@(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation),@(EPRippleLocationCenter), @(EPRippleLocationLeft), @(EPRippleLocationRight), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), nil];
+        _circleColors = [NSArray arrayWithObjects:[UIColor LightBlue], [UIColor Grey], [UIColor LightGreen], nil];
     }
     return self;
 }
@@ -42,22 +42,6 @@ static NSString *cellIdentifier = @"MyTableCell";
 - (void)viewDidLayoutSubviews
 {
     [self.tableView setFrame:self.view.bounds];
-}
-
-#pragma mark - Memory management
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (void)dealloc
-{
-    [_tableView release];
-    [_labels release];
-    [_rippleLocations release];
-    [_circleColors release];
-    [super dealloc];
 }
 
 #pragma mark - UITableViewDataSource delegate methods

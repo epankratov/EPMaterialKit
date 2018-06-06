@@ -24,10 +24,7 @@ typedef enum {
 } EPRippleLocation;
 
 @interface EPLayer : NSObject {
-    CALayer *_superLayer;
-    CALayer *_rippleLayer;
-    CALayer *_backgroundLayer;
-    CAShapeLayer *_maskLayer;
+
 }
 
 @property (nonatomic, assign) EPRippleLocation rippleLocation;

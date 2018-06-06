@@ -18,9 +18,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Create main window
-    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    _mainViewController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
-    _navigationController = [[UINavigationController alloc] initWithRootViewController:_mainViewController];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.mainViewController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
 
     // Configure the status bar for all of the views in the application
     if ([self.window respondsToSelector:@selector(setTintColor:)])
@@ -31,16 +31,6 @@
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
-}
-
-#pragma mark - Memory management
-
-- (void)dealloc
-{
-    [_mainViewController release];
-    [_navigationController release];
-    [_window release];
-    [super dealloc];
 }
 
 @end

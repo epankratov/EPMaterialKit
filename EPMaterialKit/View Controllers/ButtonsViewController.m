@@ -74,24 +74,4 @@
     self.floatButton2.layer.shadowOffset = CGSizeMake(1.0, 5.5);
 }
 
-#pragma mark - Memory management
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc
-{
-    [_raisedButton release];
-    [_flatButton1 release];
-    [_flatButton2 release];
-    [_imageButton1 release];
-    [_imageButton2 release];
-    [_floatButton1 release];
-    [_floatButton2 release];
-    [super dealloc];
-}
-
 @end

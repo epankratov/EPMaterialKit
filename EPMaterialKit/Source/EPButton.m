@@ -9,8 +9,10 @@
 #import "EPButton.h"
 
 @interface EPButton () {
-    EPLayer *_epLayer;
+
 }
+
+@property (nonatomic, strong) EPLayer *epLayer;
 
 @end
 
@@ -47,65 +49,63 @@
 - (void)setMaskEnabled:(BOOL)maskEnabled
 {
     _maskEnabled = maskEnabled;
-    [_epLayer enableMask:maskEnabled];
+    [self.epLayer enableMask:maskEnabled];
 }
 
 - (void)setRippleLocation:(EPRippleLocation)rippleLocation
 {
     _rippleLocation = rippleLocation;
-    [_epLayer setRippleLocation:rippleLocation];
+    [self.epLayer setRippleLocation:rippleLocation];
 }
 
 - (void)setRipplePercent:(CGFloat)ripplePercent
 {
     _ripplePercent = ripplePercent;
-    [_epLayer setRipplePercent:ripplePercent];
+    [self.epLayer setRipplePercent:ripplePercent];
 }
 
 - (void)setBackgroundLayerCornerRadius:(CGFloat)backgroundLayerCornerRadius
 {
     _backgroundLayerCornerRadius = backgroundLayerCornerRadius;
-    [_epLayer setBackgroundLayerCornerRadius:backgroundLayerCornerRadius];
+    [self.epLayer setBackgroundLayerCornerRadius:backgroundLayerCornerRadius];
 }
 
 - (void)setBackgroundAniEnabled:(BOOL)backgroundAniEnabled
 {
     _backgroundAniEnabled = backgroundAniEnabled;
     if (!backgroundAniEnabled) {
-        [_epLayer enableOnlyCircleLayer];
+        [self.epLayer enableOnlyCircleLayer];
     }
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius
 {
     self.layer.cornerRadius = cornerRadius;
-    [_epLayer setMaskLayerCornerRadius:cornerRadius];
+    [self.epLayer setMaskLayerCornerRadius:cornerRadius];
 }
 
 - (void)setRippleLayerColor:(UIColor *)rippleLayerColor
 {
-    [_rippleLayerColor release];
-    _rippleLayerColor = [rippleLayerColor retain];
-    [_epLayer setCircleLayerColor:rippleLayerColor];
+    _rippleLayerColor = rippleLayerColor;
+    [self.epLayer setCircleLayerColor:rippleLayerColor];
 }
 
 - (void)setBackgroundLayerColor:(UIColor *)backgroundLayerColor
 {
-    [_backgroundLayerColor release];
-    _backgroundLayerColor = [backgroundLayerColor retain];
-    [_epLayer setBackgroundLayerColor:backgroundLayerColor];
+    _backgroundLayerColor = backgroundLayerColor;
+    [self.epLayer setBackgroundLayerColor:backgroundLayerColor];
 }
 
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
-    [_epLayer superLayerDidResize];
+    [self.epLayer superLayerDidResize];
 }
 
 - (void)setBounds:(CGRect)bounds
 {
     [super setBounds:bounds];
-    [_epLayer superLayerDidResize];
+    [self.epLayer superLayerDidResize];
 }
 
 #pragma mark - Touches handling
@@ -113,22 +113,22 @@
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
     if (self.rippleLocation == EPRippleLocationTapLocation) {
-        [_epLayer didChangeTapLocation:[touch locationInView:self]];
+        [self.epLayer didChangeTapLocation:[touch locationInView:self]];
     }
     
     // rippleLayer animation
-    [_epLayer animateScaleForCircleLayer:0.45 toScale:1.0 withTimingFunction:self.rippleAniTimingFunction withDuration:self.aniDuration];
+    [self.epLayer animateScaleForCircleLayer:0.45 toScale:1.0 withTimingFunction:self.rippleAniTimingFunction withDuration:self.aniDuration];
     
     // backgroundLayer animation
     if (self.backgroundAniEnabled) {
-        [_epLayer animateAlphaForBackgroundLayer:self.backgroundAniTimingFunction withDuration:self.aniDuration];
+        [self.epLayer animateAlphaForBackgroundLayer:self.backgroundAniTimingFunction withDuration:self.aniDuration];
     }
     
     // shadow animation for self
     if (self.shadowAniEnabled) {
         CGFloat shadowRadius = self.layer.shadowRadius;
         CGFloat shadowOpacity = self.layer.shadowOpacity;
-        [_epLayer animateSuperLayerShadow:10 toRadius:shadowRadius fromOpacity:0 toOpacity:shadowOpacity withTimingFunction:self.shadowAniTimingFunction withDuration:self.aniDuration];
+        [self.epLayer animateSuperLayerShadow:10 toRadius:shadowRadius fromOpacity:0 toOpacity:shadowOpacity withTimingFunction:self.shadowAniTimingFunction withDuration:self.aniDuration];
     }
     
     return [super beginTrackingWithTouch:touch withEvent:event];
@@ -138,7 +138,7 @@
 
 - (void)setupLayer
 {
-    _epLayer = [[EPLayer alloc] initWithSuperLayer:self.layer];
+    self.epLayer = [[EPLayer alloc] initWithSuperLayer:self.layer];
     self.adjustsImageWhenHighlighted = FALSE;
     self.maskEnabled = TRUE;
     self.rippleLocation = EPRippleLocationTapLocation;
@@ -153,16 +153,6 @@
     self.cornerRadius = 2.5;
     self.rippleLayerColor = [UIColor colorWithWhite:0.45f alpha:0.5f];
     self.backgroundLayerColor = [UIColor colorWithWhite:0.75f alpha:0.25f];
-}
-
-#pragma mark - Memory management
-
-- (void)dealloc
-{
-    [_epLayer release];
-    [_rippleLayerColor release];
-    [_backgroundLayerColor release];
-    [super dealloc];
 }
 
 @end

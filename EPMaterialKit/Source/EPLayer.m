@@ -8,6 +8,17 @@
 
 #import "EPLayer.h"
 
+@interface EPLayer () {
+
+}
+
+@property (nonatomic, strong) CALayer *superLayer;
+@property (nonatomic, strong) CALayer *rippleLayer;
+@property (nonatomic, strong) CALayer *backgroundLayer;
+@property (nonatomic, strong) CAShapeLayer *maskLayer;
+
+@end
+
 @interface EPLayer (PrivateMethods)
 
 - (void)setCircleLayerLocationAt:(CGPoint)center;
@@ -45,33 +56,33 @@
 {
     self = [super init];
     if (self) {
-        _superLayer = [superLayer retain];
+        self.superLayer = superLayer;
         
         CGFloat superLayerWidth = CGRectGetWidth(superLayer.bounds);
         CGFloat superLayerHeight = CGRectGetHeight(superLayer.bounds);
         
-        // background layer
-        _backgroundLayer = [[CALayer layer] retain];
-        _backgroundLayer.frame = superLayer.bounds;
-        _backgroundLayer.opacity = 0.0;
-        [_superLayer addSublayer:_backgroundLayer];
+        // Background layer
+        self.backgroundLayer = [CALayer layer];
+        self.backgroundLayer.frame = superLayer.bounds;
+        self.backgroundLayer.opacity = 0.0;
+        [self.superLayer addSublayer:self.backgroundLayer];
         
-        // circlelayer
+        // Circle layer
         self.ripplePercent = 0.9;
         self.rippleLocation = EPRippleLocationTapLocation;
         CGFloat circleSize = (CGFloat)(MAX(superLayerWidth, superLayerHeight) * self.ripplePercent);
         CGFloat circleCornerRadius = circleSize / 2;
         
-        _rippleLayer = [[CALayer layer] retain];
-        _rippleLayer.opacity = 0.0;
-        _rippleLayer.cornerRadius = circleCornerRadius;
+        self.rippleLayer = [CALayer layer];
+        self.rippleLayer.opacity = 0.0;
+        self.rippleLayer.cornerRadius = circleCornerRadius;
         [self setCircleLayerLocationAt:CGPointMake(superLayerWidth / 2, superLayerHeight / 2)];
-        [_backgroundLayer addSublayer:_rippleLayer];
+        [self.backgroundLayer addSublayer:self.rippleLayer];
         
-        // mask layer
-        _maskLayer = [[CAShapeLayer layer] retain];
+        // Mask layer
+        self.maskLayer = [CAShapeLayer layer];
         [self setMaskLayerCornerRadius:superLayer.cornerRadius];
-        [_backgroundLayer setMask:_maskLayer];
+        [self.backgroundLayer setMask:self.maskLayer];
     }
     return self;
 }
@@ -80,23 +91,23 @@
 
 - (void)setMaskLayerCornerRadius:(CGFloat)cornerRadius
 {
-    _maskLayer.path = [UIBezierPath bezierPathWithRoundedRect:_backgroundLayer.bounds cornerRadius:cornerRadius].CGPath;
+    self.maskLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.backgroundLayer.bounds cornerRadius:cornerRadius].CGPath;
 }
 
 - (void)setRippleLocation:(EPRippleLocation)rippleLocation
 {
     _rippleLocation = rippleLocation;
     CGPoint origin = CGPointZero;
-    switch (rippleLocation)
+    switch (self.rippleLocation)
     {
         case EPRippleLocationCenter:
-            origin = CGPointMake(_superLayer.bounds.size.width / 2, _superLayer.bounds.size.height / 2);
+            origin = CGPointMake(self.superLayer.bounds.size.width / 2, self.superLayer.bounds.size.height / 2);
             break;
         case EPRippleLocationLeft:
-            origin = CGPointMake(_superLayer.bounds.size.width * 0.25, _superLayer.bounds.size.height / 2);
+            origin = CGPointMake(self.superLayer.bounds.size.width * 0.25, self.superLayer.bounds.size.height / 2);
             break;
         case EPRippleLocationRight:
-            origin = CGPointMake(_superLayer.bounds.size.width * 0.75, _superLayer.bounds.size.height / 2);
+            origin = CGPointMake(self.superLayer.bounds.size.width * 0.75, self.superLayer.bounds.size.height / 2);
             break;
         default:
             break;
@@ -110,10 +121,10 @@
 {
     _ripplePercent = ripplePercent;
     if (self.ripplePercent > 0) {
-        CGFloat width = CGRectGetWidth(_superLayer.bounds);
-        CGFloat height = CGRectGetHeight(_superLayer.bounds);
+        CGFloat width = CGRectGetWidth(self.superLayer.bounds);
+        CGFloat height = CGRectGetHeight(self.superLayer.bounds);
         CGFloat circleSize = (CGFloat)(MAX(width, height) * self.ripplePercent);
-        _rippleLayer.cornerRadius = circleSize / 2;
+        self.rippleLayer.cornerRadius = circleSize / 2;
         [self setCircleLayerLocationAt:CGPointMake(width / 2, height / 2)];
     }
 }
@@ -122,27 +133,27 @@
 {
     [CATransaction begin];
     [CATransaction setDisableActions:true];
-    _backgroundLayer.frame = _superLayer.bounds;
-    [self setMaskLayerCornerRadius:_superLayer.cornerRadius];
+    self.backgroundLayer.frame = self.superLayer.bounds;
+    [self setMaskLayerCornerRadius:self.superLayer.cornerRadius];
     [CATransaction commit];
     [self setRippleLocation:self.rippleLocation];
-//    [self setCircleLayerLocationAt:CGPointMake(_superLayer.bounds.size.width / 2, _superLayer.bounds.size.height / 2)];
+//    [self setCircleLayerLocationAt:CGPointMake(self.superLayer.bounds.size.width / 2, self.superLayer.bounds.size.height / 2)];
 }
 
 - (void)enableOnlyCircleLayer
 {
-    [_backgroundLayer removeFromSuperlayer];
-    [_superLayer addSublayer:_rippleLayer];
+    [self.backgroundLayer removeFromSuperlayer];
+    [self.superLayer addSublayer:self.rippleLayer];
 }
 
 - (void)setBackgroundLayerColor:(UIColor *)color
 {
-    _backgroundLayer.backgroundColor = color.CGColor;
+    self.backgroundLayer.backgroundColor = color.CGColor;
 }
 
 - (void)setCircleLayerColor:(UIColor *)color
 {
-    _rippleLayer.backgroundColor = color.CGColor;
+    self.rippleLayer.backgroundColor = color.CGColor;
 }
 
 - (void)didChangeTapLocation:(CGPoint)location
@@ -154,12 +165,12 @@
 
 - (void)enableMask:(BOOL)enable
 {
-    _backgroundLayer.mask = enable ? _maskLayer : nil;
+    self.backgroundLayer.mask = enable ? self.maskLayer : nil;
 }
 
 - (void)setBackgroundLayerCornerRadius:(CGFloat)cornerRadius
 {
-    _backgroundLayer.cornerRadius = cornerRadius;
+    self.backgroundLayer.cornerRadius = cornerRadius;
 }
 
 - (void)animateScaleForCircleLayer:(CGFloat)fromScale
@@ -181,7 +192,7 @@
     groupAnim.removedOnCompletion = FALSE;
     groupAnim.fillMode = kCAFillModeForwards;
     groupAnim.animations = [NSArray arrayWithObjects:rippleLayerAnim, opacityAnim, nil];
-    [_rippleLayer addAnimation:groupAnim forKey: nil];
+    [self.rippleLayer addAnimation:groupAnim forKey: nil];
 }
 
 - (void)animateAlphaForBackgroundLayer:(EPTimingFunction)timingFunction
@@ -192,7 +203,7 @@
     backgroundLayerAnim.toValue = @(0.0);
     backgroundLayerAnim.duration = duration;
     backgroundLayerAnim.timingFunction = [EPLayer timingFunctionForFunctionType:timingFunction];
-    [_backgroundLayer addAnimation:backgroundLayerAnim forKey: nil];
+    [self.backgroundLayer addAnimation:backgroundLayerAnim forKey: nil];
 }
 
 - (void)animateSuperLayerShadow:(CGFloat)fromRadius
@@ -202,25 +213,13 @@
              withTimingFunction:(EPTimingFunction)timingFunction
                    withDuration:(CFTimeInterval)duration
 {
-    [self animateShadowForLayer:_superLayer
+    [self animateShadowForLayer:self.superLayer
                      fromRadius:fromRadius
                        toRadius:toRadius
                     fromOpacity:fromOpacity
                       toOpacity:toOpacity
              withTimingFunction:timingFunction
                    withDuration:duration];
-}
-
-#pragma mark - Memory management
-
-- (void)dealloc
-{
-    [_superLayer release];
-    [_rippleLayer release];
-    [_backgroundLayer release];
-    [_maskLayer release];
-
-    [super dealloc];
 }
 
 @end
@@ -231,8 +230,8 @@
 
 - (void)setCircleLayerLocationAt:(CGPoint)center
 {
-    CGFloat width = CGRectGetWidth(_superLayer.bounds);
-    CGFloat height = CGRectGetHeight(_superLayer.bounds);
+    CGFloat width = CGRectGetWidth(self.superLayer.bounds);
+    CGFloat height = CGRectGetHeight(self.superLayer.bounds);
     CGFloat subSize = (CGFloat)(MAX(width, height) * self.ripplePercent);
     CGFloat subX = center.x - subSize/2;
     CGFloat subY = center.y - subSize/2;
@@ -240,8 +239,8 @@
     // disable animation when changing layer frame
     [CATransaction begin];
     [CATransaction setDisableActions:true];
-    _rippleLayer.cornerRadius = subSize / 2;
-    _rippleLayer.frame = CGRectMake(subX, subY, subSize, subSize);
+    self.rippleLayer.cornerRadius = subSize / 2;
+    self.rippleLayer.frame = CGRectMake(subX, subY, subSize, subSize);
     [CATransaction commit];
 }
 
