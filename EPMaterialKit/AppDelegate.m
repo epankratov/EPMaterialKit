@@ -25,7 +25,6 @@
     // Configure the status bar for all of the views in the application
     if ([self.window respondsToSelector:@selector(setTintColor:)])
         self.window.tintColor = [UIColor DeepPurple];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // Start with window
     self.window.rootViewController = self.navigationController;
