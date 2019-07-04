@@ -140,7 +140,7 @@
     if (self.bottomBorderEnabled) {
         self.bottomBorderLayer = [CALayer layer];
         self.bottomBorderLayer.frame = CGRectMake(0, self.layer.bounds.size.height - 1, self.bounds.size.width, 1);
-        self.bottomBorderLayer.backgroundColor = [UIColor Grey].CGColor;
+        self.bottomBorderLayer.backgroundColor = [UIColor Gray].CGColor;
         [self.layer addSublayer:self.bottomBorderLayer];
     }
 }

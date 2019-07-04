@@ -30,7 +30,7 @@ static NSString *cellIdentifier = @"MyTableCell";
     if (self) {
         self.labels = [NSArray arrayWithObjects:@"MKButton", @"MKTextField", @"MKTableViewCell", @"MKTextView", @"MKColor", @"MKLayer", @"MKAlert", @"MKCheckBox", nil];
         self.rippleLocations = [NSArray arrayWithObjects:@(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation),@(EPRippleLocationCenter), @(EPRippleLocationLeft), @(EPRippleLocationRight), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), @(EPRippleLocationTapLocation), nil];
-        self.circleColors = [NSArray arrayWithObjects:[UIColor LightBlue], [UIColor Grey], [UIColor LightGreen], nil];
+        self.circleColors = [NSArray arrayWithObjects:[UIColor LightBlue], [UIColor Gray], [UIColor LightGreen], nil];
     }
     return self;
 }

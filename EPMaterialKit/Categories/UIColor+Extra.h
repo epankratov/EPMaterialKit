@@ -27,7 +27,7 @@
 + (UIColor *)Orange;
 + (UIColor *)DeepOrange;
 + (UIColor *)Brown;
-+ (UIColor *)Grey;
-+ (UIColor *)BlueGrey;
++ (UIColor *)Gray;
++ (UIColor *)BlueGray;
 
 @end

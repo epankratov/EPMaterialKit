@@ -96,12 +96,12 @@
     return HEX_COLOR(0x795548);
 }
 
-+ (UIColor *)Grey
++ (UIColor *)Gray
 {
     return HEX_COLOR(0x9E9E9E);
 }
 
-+ (UIColor *)BlueGrey
++ (UIColor *)BlueGray
 {
     return HEX_COLOR(0x607D8B);
 }

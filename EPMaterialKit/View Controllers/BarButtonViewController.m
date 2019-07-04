@@ -46,7 +46,7 @@
     self.label.backgroundLayerColor = [UIColor clearColor];
     self.label.userInteractionEnabled = TRUE;
     
-    self.imageView.layer.borderColor = [UIColor Grey].CGColor;
+    self.imageView.layer.borderColor = [UIColor Gray].CGColor;
     self.imageView.layer.borderWidth = 1.0;
     self.imageView.ripplePercent = 1.2;
     self.imageView.rippleLocation = EPRippleLocationTapLocation;

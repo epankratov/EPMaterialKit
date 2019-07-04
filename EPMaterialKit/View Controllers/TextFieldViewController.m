@@ -53,7 +53,7 @@ const CGFloat kViewGapDistance = 35.0;
     self.textField2.tag = 1;
     
     // Border, no shadow, floatPlaceHolder disabled
-    self.textField3.layer.borderColor = [UIColor Grey].CGColor;
+    self.textField3.layer.borderColor = [UIColor Gray].CGColor;
     self.textField3.rippleLayerColor = [UIColor Amber];
     self.textField3.tintColor = [UIColor DeepOrange];
     self.textField3.rippleLocation = EPRippleLocationLeft;
