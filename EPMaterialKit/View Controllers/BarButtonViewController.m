@@ -31,14 +31,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    EPButton *button = [[EPButton alloc] initWithFrame:CGRectMake(0, 0, 44, 32)];
-    [button setImage:[UIImage imageNamed:@"uibaritem_icon.png"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(handleRightButton:) forControlEvents:UIControlEventTouchUpInside];
-    button.backgroundAniEnabled = FALSE;
-    button.rippleLocation = EPRippleLocationCenter;
-    button.ripplePercent = 1.15;
+    UIImage *image = [UIImage imageNamed:@"uibaritem_icon.png"];
 
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    EPImageView *imageView = [[EPImageView alloc] initWithImage:image];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    imageView.backgroundAniEnabled = FALSE;
+    imageView.rippleLocation = EPRippleLocationCenter;
+    imageView.ripplePercent = 1.15;
+    imageView.layer.borderWidth = 1.0;
+    imageView.layer.borderColor = [UIColor BlueGray].CGColor;
+
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleRightButton:)];
+    [tapGesture setNumberOfTapsRequired:1];
+    [imageView addGestureRecognizer:tapGesture];
+
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:imageView];
     self.navigationItem.rightBarButtonItem = rightButton;
     
     self.label.rippleLocation = EPRippleLocationTapLocation;
@@ -57,7 +64,7 @@
 
 - (void)handleRightButton:(id)sender
 {
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(animateLabelRipple:) userInfo:nil repeats:FALSE];
+    [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(animateLabelRipple:) userInfo:nil repeats:FALSE];
     [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(animateImageRipple:) userInfo:nil repeats:FALSE];
 }
 
