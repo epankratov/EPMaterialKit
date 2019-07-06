@@ -247,7 +247,4 @@
     self.floatingLabel.alpha = 0.0;
 }
 
-#pragma mark - Memory management
-
-
 @end

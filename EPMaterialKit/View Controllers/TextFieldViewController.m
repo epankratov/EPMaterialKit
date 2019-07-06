@@ -100,17 +100,10 @@ const CGFloat kViewGapDistance = 35.0;
 
 #pragma mark - Memory management
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-
 }
 
 #pragma mark - Keyboard event notifications
