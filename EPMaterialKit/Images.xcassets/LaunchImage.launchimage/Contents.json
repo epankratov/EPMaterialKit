@@ -10,6 +10,15 @@
       "scale" : "3x"
     },
     {
+      "orientation" : "portrait",
+      "extent" : "full-screen",
+      "idiom" : "iphone",
+      "subtype" : "2436h",
+      "minimum-system-version" : "11.0",
+      "filename" : "Default-1125w-2436h@3x.png",
+      "scale" : "3x"
+    },
+    {
       "orientation" : "landscape",
       "idiom" : "iphone",
       "extent" : "full-screen",
