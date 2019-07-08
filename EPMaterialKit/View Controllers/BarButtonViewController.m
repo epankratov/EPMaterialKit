@@ -31,15 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *image = [UIImage imageNamed:@"uibaritem_icon.png"];
+    UIImage *image = [UIImage imageNamed:@"icon_menu.png"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 
     EPImageView *imageView = [[EPImageView alloc] initWithImage:image];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    imageView.tintColor = self.view.tintColor;
     imageView.backgroundAniEnabled = FALSE;
     imageView.rippleLocation = EPRippleLocationCenter;
     imageView.ripplePercent = 1.15;
-    imageView.layer.borderWidth = 1.0;
-    imageView.layer.borderColor = [UIColor BlueGray].CGColor;
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleRightButton:)];
     [tapGesture setNumberOfTapsRequired:1];
