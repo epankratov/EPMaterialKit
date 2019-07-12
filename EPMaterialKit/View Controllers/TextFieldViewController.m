@@ -8,7 +8,7 @@
 
 #import "TextFieldViewController.h"
 
-const CGFloat kViewGapDistance = 35.0;
+const CGFloat kViewGapDistance = 50.0;
 
 @interface TextFieldViewController () {
 
@@ -17,7 +17,20 @@ const CGFloat kViewGapDistance = 35.0;
 @property (nonatomic, assign) CGFloat defaultOriginY;
 @property (nonatomic, assign) BOOL isKeyboardVisible;
 
+@end
+
+@interface TextFieldViewController (NotificationHandling)
+
+- (void)keyboardWillShowHandler:(NSNotification *)notification;
+- (void)keyboardWillHideHandler:(NSNotification *)notification;
+
+@end
+
+@interface TextFieldViewController (PrivateMethods)
+
 - (CGFloat)viewPositionForCurrentResponder;
+- (void)changeFocusPositionWithDuration:(NSTimeInterval)animationDuration;
+- (void)restoreFocusPositionWithDuration:(NSTimeInterval)animationDuration;
 
 @end
 
@@ -87,15 +100,21 @@ const CGFloat kViewGapDistance = 35.0;
     self.textField6.tintColor = [UIColor LightGreen];
     self.textField6.tag = 5;
 
-    self.textField1.delegate = self;
-    self.textField2.delegate = self;
-    self.textField3.delegate = self;
-    self.textField4.delegate = self;
-    self.textField5.delegate = self;
-    self.textField6.delegate = self;
+    // Set all the text fields delegates
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:[UITextField class]]) {
+            EPTextField *textField = (EPTextField *)view;
+            textField.delegate = self;
+        }
+    }
+
     // Subscribe onto keyboard notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShowHandler:)
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHideHandler:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
 }
 
 #pragma mark - Memory management
@@ -104,46 +123,6 @@ const CGFloat kViewGapDistance = 35.0;
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
-#pragma mark - Keyboard event notifications
-
-- (void)keyboardWillShow:(NSNotification *)aNotification
-{
-    if (!self.isKeyboardVisible) {
-        self.isKeyboardVisible = TRUE;
-        self.defaultOriginY = self.view.frame.origin.y;
-    }
-    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = self.view.frame;
-    CGFloat newOrigin = [self viewPositionForCurrentResponder];
-    frame.origin.y = -newOrigin;
-    self.view.frame = frame;
-    [UIView animateWithDuration:animationDuration
-                          delay:0.0f
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.view.frame = frame;
-                     }
-                     completion:^(BOOL finished){
-                     }];
-}
-
-- (void)keyboardWillHide:(NSNotification *)aNotification
-{
-    self.isKeyboardVisible = FALSE;
-    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = self.view.frame;
-    frame.origin.y = self.defaultOriginY;
-    self.view.frame = frame;
-    [UIView animateWithDuration:animationDuration
-                          delay:0.0f
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.view.frame = frame;
-                     }
-                     completion:^(BOOL finished){
-                     }];
 }
 
 #pragma mark - UITextField delegate methods
@@ -170,19 +149,61 @@ const CGFloat kViewGapDistance = 35.0;
             }
         }
     }
-    if (nextTextField != nil)
+    if (nextTextField != nil) {
         [nextTextField becomeFirstResponder];
+    }
     return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    NSTimeInterval animationDuration = 0.25;
+    [self changeFocusPositionWithDuration:animationDuration];
 }
 
 #pragma mark - Touches handling
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    self.isKeyboardVisible = FALSE;
     [self.view endEditing:TRUE];
 }
 
+@end
+
+#pragma mark - Keyboard event notifications handlers
+
+@implementation TextFieldViewController (NotificationHandling)
+
+- (void)keyboardWillShowHandler:(NSNotification *)notification
+{
+    if (!self.isKeyboardVisible) {
+        self.isKeyboardVisible = TRUE;
+        self.defaultOriginY = self.view.frame.origin.y;
+    }
+    NSTimeInterval animationDuration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    [self changeFocusPositionWithDuration:animationDuration];
+}
+
+- (void)keyboardWillHideHandler:(NSNotification *)notification
+{
+//    CGRect bFrame = [[notification.userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+//    CGRect eFrame = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    NSLog(@"b frame: %@", NSStringFromCGRect(bFrame));
+//    NSLog(@"e frame: %@", NSStringFromCGRect(eFrame));
+
+    // Set flag only when any of the textfield is not focused
+    if (!self.isKeyboardVisible) {
+        NSTimeInterval animationDuration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+        [self restoreFocusPositionWithDuration:animationDuration];
+    }
+}
+
+@end
+
 #pragma mark - Private methods
+
+@implementation TextFieldViewController (PrivateMethods)
 
 - (CGFloat)viewPositionForCurrentResponder
 {
@@ -197,6 +218,35 @@ const CGFloat kViewGapDistance = 35.0;
         }
     }
     return gap;
+}
+
+- (void)changeFocusPositionWithDuration:(NSTimeInterval)animationDuration
+{
+    CGRect frame = self.view.frame;
+    CGFloat newOrigin = [self viewPositionForCurrentResponder];
+    frame.origin.y = -newOrigin;
+    [UIView animateWithDuration:animationDuration
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.view.frame = frame;
+                     }
+                     completion:^(BOOL finished){
+                     }];
+}
+
+- (void)restoreFocusPositionWithDuration:(NSTimeInterval)animationDuration
+{
+    CGRect frame = self.view.frame;
+    frame.origin.y = self.defaultOriginY;
+    [UIView animateWithDuration:animationDuration
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.view.frame = frame;
+                     }
+                     completion:^(BOOL finished){
+                     }];
 }
 
 @end
