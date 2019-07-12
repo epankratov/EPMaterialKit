@@ -187,11 +187,6 @@ const CGFloat kViewGapDistance = 50.0;
 
 - (void)keyboardWillHideHandler:(NSNotification *)notification
 {
-//    CGRect bFrame = [[notification.userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-//    CGRect eFrame = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-//    NSLog(@"b frame: %@", NSStringFromCGRect(bFrame));
-//    NSLog(@"e frame: %@", NSStringFromCGRect(eFrame));
-
     // Set flag only when any of the textfield is not focused
     if (!self.isKeyboardVisible) {
         NSTimeInterval animationDuration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
